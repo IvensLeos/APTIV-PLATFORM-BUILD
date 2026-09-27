@@ -1,0 +1,1 @@
+function e(e){return String(e||``).trim().toLowerCase().replace(/[^a-z0-9]+/g,`-`).replace(/^-+|-+$/g,``)}function t(t,n,r){let i=e(t),a=n?`/capture/${i}/${e(n)}`:`/capture/${i}`;return r?`${a}?date=${encodeURIComponent(r)}`:a}export{e as n,t};
