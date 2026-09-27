@@ -1,0 +1,22 @@
+{
+	"name": "aptiv-platform",
+	"private": true,
+	"version": "1.0.0",
+	"type": "module",
+	"scripts": {
+		"start": "node index.js"
+	},
+	"dependencies": {
+		"chart.js": "^4.5.1",
+		"chartjs-plugin-annotation": "^3.1.0",
+		"chartjs-plugin-datalabels": "^2.2.0",
+		"cheerio": "^1.2.0",
+		"cheerio-tableparser": "^1.0.1",
+		"jspdf": "^4.2.1",
+		"jspdf-autotable": "^5.0.7",
+		"mongodb": "^7.2.0",
+		"node-cron": "^4.2.1",
+		"qrcode": "^1.5.4",
+		"xlsx": "^0.18.5"
+	}
+}

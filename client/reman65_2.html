@@ -1,0 +1,1982 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN'>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>[REMAN65] MANTIS: Reports</title>
+<LINK REL='stylesheet' TYPE='text/css' HREF='https://reman65.aptiv.com/standard/styles/generic.css'>
+<script type='text/javascript'>
+function showWindonStatus( ) {
+var WindowStatus = 'MANTIS Version 5.00, Delphi Electronics and Safety Manufacturing Engineering, Copyright © 2001 - 2026, All Rights Reserved.';
+window.status=WindowStatus;
+}
+  var keyheld = 0
+  var maxkeys = 20
+  function keydown(event) {
+    var ignorKeys = [16, 17, 18, 20, 33, 34, 35, 36, 37, 38, 39, 40, 91, 93];
+    //alert(event.keyCode);
+    if(event.keyCode == 116) {
+      b = prompt("Refresh the page?",'');
+    	if(b == null) {
+        event.keyCode = 0;
+        event.returnValue = false;
+        return false;
+      }
+    }
+    if (contains(ignorKeys, event.keyCode) == false) {
+     	if (keyheld > maxkeys) {
+        do {
+          a = prompt('Possible STUCK KEY. Check keyboard, then click Cancel','' );
+    	  } while (a == '')
+        if (a != '') {
+          keyheld = 0
+        }
+       } else {
+    			   keyheld+=1
+       }
+     }
+  }
+  function keyup( ) {
+      keyheld = 0
+  }
+function contains(a, obj) {
+    for (var i = 0; i < a.length; i++) {
+        if (a[i] === obj) {
+            return true;
+        }
+    }
+    return false;
+}
+</script>
+<script type='text/javascript' src='https://reman65.aptiv.com/standard/jscripts/overlib.js'></script>
+<script type='text/javascript' src='https://reman65.aptiv.com/standard/jscripts/ajaxroutine.js'>
+
+    /***********************************************
+    * Basic Ajax Routine- Â© Dynamic Drive DHTML code library (www.dynamicdrive.com)
+    * Dynamic Ajax Content- Â© Dynamic Drive DHTML code library (www.dynamicdrive.com)
+    * This notice MUST stay intact for legal use
+    * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+    ***********************************************/
+    </script>
+    
+<script type='text/javascript'>
+    var loginTimer;
+
+    function logout(redirect) {
+        let url = location.protocol + '//' + window.location.hostname;
+        const request = new XMLHttpRequest();
+        localStorage.removeItem('LoginUSER');
+
+        document.getElementById('logged-in').innerHTML = '';
+        document.getElementById('logged-in').style.visibility = 'collapse';
+
+        window.onload = null;
+        window.onmousemove = null;
+        window.onmousedown = null;
+        window.ontouchstart = null;
+        window.ontouchmove = null;
+        window.onclick = null;
+        window.onkeydown = null;
+        window.removeEventListener('scroll', resetTimer, true);
+
+        request.open('GET', url + '/std_auth/dummy_login', false, 'logout', '');
+        if (redirect) {
+            request.onreadystatechange = function () {
+                window.parent.location.href = url;
+            }
+        }
+        request.send();
+    }
+
+    function resetTimer() {
+        clearTimeout(loginTimer);
+
+        if (localStorage.getItem('LoginUSER') == null)
+        {
+            logout();
+        } else {
+            loginTimer = setTimeout(logout, localStorage.getItem('LoginTimeout'), false);
+        }
+    }
+
+    // '' must be replaced with value
+    // TCL: $userId and $userID
+    // PHP: none
+    if ('' != '') {
+        localStorage.setItem('LoginUSER', '');
+        // Do not remove the next comment line
+        localStorage.setItem('LoginTimeout', 300000);
+    }
+
+    loginUser = localStorage.getItem('LoginUSER');
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const div = document.createElement('div');
+        div.className = 'floating-div';
+        div.id = 'logged-in';
+        document.body.appendChild(div);
+
+        if (loginUser != '' && loginUser != null) {
+            document.getElementById('logged-in').innerHTML = loginUser + "<button class='floating-button' onclick='logout(true)'>Logout</button>";
+            document.getElementById('logged-in').style.visibility = 'visible';
+        } else {
+            document.getElementById('logged-in').innerHTML = '';
+            document.getElementById('logged-in').style.visibility = 'collapse';
+        }
+    }, false);
+
+    if (localStorage.getItem('LoginUSER') != null) {
+        window.onload = resetTimer;
+        window.onmousemove = resetTimer;
+        window.onmousedown = resetTimer;
+        window.ontouchstart = resetTimer;
+        window.ontouchmove = resetTimer;
+        window.onclick = resetTimer;
+        window.onkeydown = resetTimer;
+        window.addEventListener('scroll', resetTimer, true);
+    }
+</script>
+
+
+</head>
+<body onLoad='showWindonStatus();' onkeydown='keydown(event);' onkeyup='keyup();'>
+<div id='overDiv' style='position:absolute; visibility:hidden; z-index:1000;'></div>
+<script type='text/javascript' src='https://reman65.aptiv.com/standard/jscripts/reportHelp.js'></script>
+<div class='pagetitle'>Reports</div>
+<HR>
+<BR>
+<pre>
+</pre>
+<table cellspacing=0>
+<tr valign=top class=reptitle><th nowrap align=right>Title:</th><td>&nbsp;</td><td> </td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>Options:</th><td>&nbsp;</td><td> -fpyield2 hourly station productfamily partnumber -disallow station GUMP_QUALITY DLNPROFINLKTMRR DLNPROFINRTR08 DLNPROFINRTR_07 DLNTSTSMTICT17 DLNTSTSMTICT18 DLNTSTSMTICTIL1 DLNTSTSMTICTIL2 DLNTSTSMTICTIL3 DLNTSTSMTICTIL4 DLNTSTSMTICTIL5 DLNTSTSMTICTIL7 DLNTSTSMTICTIL9 DLNTSTSMTICTL10 DLNTSTSMTICTL12 DLNTSTSMTICTL13 DLNTSTSMTICTL15 ECU_ICT_01 INLINE_ICT_01</td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>Report Name:</th><td>&nbsp;</td><td> X_MANTIS</td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>Maximum Events:</th><td>&nbsp;</td><td> 500000000</td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>From:</th><td>&nbsp;</td><td> 05/15/26 16:10:00</td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>To:</th><td>&nbsp;</td><td> 05/15/26 22:16:00</td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>Process:</th><td>&nbsp;</td><td> BOARD_LABEL,&nbspSPI_S1,&nbspSPI_S2,&nbspUNDERFILLAOI,&nbspAOI_PTH,&nbspXRAY,&nbspICT,&nbspPROGRAMMING,&nbspMOL,&nbspSINGULATION,&nbspEDGEBONDAOI,&nbspROUTERMILLING,&nbspANTENNAATTACH,&nbspLEAKTEST,&nbspSPRAYCOAT,&nbspSPRAYCOAT_L3,&nbspCONT_LOADPCB,&nbspSCREWDRIVE</td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>Report Time:</th><td>&nbsp;</td><td> 05/23/2026 14:02:25</td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>System:</th><td>&nbsp;</td><td> reman65.aptiv.com</td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>Language:</th><td>&nbsp;</td><td> english</td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>Data Source:</th><td>&nbsp;</td><td> Real-Time System</td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>Filter:</th><td>&nbsp;</td><td> Dis-allow where station = GUMP_QUALITY or DLNPROFINLKTMRR or DLNPROFINRTR08 or DLNPROFINRTR_07 or DLNTSTSMTICT17 or DLNTSTSMTICT18 or DLNTSTSMTICTIL1 or DLNTSTSMTICTIL2 or DLNTSTSMTICTIL3 or DLNTSTSMTICTIL4 or DLNTSTSMTICTIL5 or DLNTSTSMTICTIL7 or DLNTSTSMTICTIL9 or DLNTSTSMTICTL10 or DLNTSTSMTICTL12 or DLNTSTSMTICTL13 or DLNTSTSMTICTL15 or ECU_ICT_01 or INLINE_ICT_01</td></tr>
+</table>
+<hr><h4>First-pass Yield Report : Process,Time Range,Station,Product Family,Part Number</h4>
+<p><button onclick="window.open('https://reman65.aptiv.com/standard/tmp/10_8_73_129_1779562948_fpyield.csv','')">Open Report in Excel</button></p>
+<p>
+			<b>WARNING</b>: This report contains data for more than one product type and may not show accurate counts as a result.
+			</p>
+		
+<table border=0 cellspacing=1 cellpadding=4>
+<tr>
+<td colspan=5></td>
+<th class=reptitle colspan=4>First-pass</th>
+</tr>
+<tr class=reptitle>
+<th align=left>Process</th>
+<th align=left>Time Range</th>
+<th align=left>Station</th>
+<th align=left>Product Family</th>
+<th align=left>Part Number</th>
+<th aligh=right>Pass</th>
+<th aligh=right>Fail</th>
+<th aligh=right>Total</th>
+<th aligh=right>Yield</th>
+</tr>
+<tr class=repdata>
+<td class=reptitle>ANTENNAATTACH</td>
+<td class=reptitle>05/15/26&nbsp;16:10:00&nbsp;-&nbsp;05/15/2026&nbsp;16:59:59</td>
+<td class=reptitle>RAD_ANTATTCH_04</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28874844</td>
+<td align=right>362</td>
+<td align=right>0</td>
+<td align=right>362</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>RAD_ANTATTCH_05</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28847538</td>
+<td align=right>25</td>
+<td align=right>0</td>
+<td align=right>25</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>STLA_SRR6P</td>
+<td class=reptitle>28874745</td>
+<td align=right>191</td>
+<td align=right>0</td>
+<td align=right>191</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;17:00:00&nbsp;-&nbsp;17:59:59</td>
+<td class=reptitle>RAD_ANTATTCH_04</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28874844</td>
+<td align=right>466</td>
+<td align=right>0</td>
+<td align=right>466</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>RAD_ANTATTCH_05</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28847538</td>
+<td align=right>360</td>
+<td align=right>0</td>
+<td align=right>360</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;18:00:00&nbsp;-&nbsp;18:59:59</td>
+<td class=reptitle>RAD_ANTATTCH_04</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28874844</td>
+<td align=right>396</td>
+<td align=right>0</td>
+<td align=right>396</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>RAD_ANTATTCH_05</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28836276</td>
+<td align=right>78</td>
+<td align=right>0</td>
+<td align=right>78</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28847538</td>
+<td align=right>351</td>
+<td align=right>0</td>
+<td align=right>351</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;19:00:00&nbsp;-&nbsp;19:59:59</td>
+<td class=reptitle>RAD_ANTATTCH_04</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28874844</td>
+<td align=right>430</td>
+<td align=right>0</td>
+<td align=right>430</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>RAD_ANTATTCH_05</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28836276</td>
+<td align=right>428</td>
+<td align=right>0</td>
+<td align=right>428</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;20:00:00&nbsp;-&nbsp;20:59:59</td>
+<td class=reptitle>RAD_ANTATTCH_04</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>127</td>
+<td align=right>0</td>
+<td align=right>127</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28874844</td>
+<td align=right>281</td>
+<td align=right>0</td>
+<td align=right>281</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>RAD_ANTATTCH_05</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28836276</td>
+<td align=right>379</td>
+<td align=right>0</td>
+<td align=right>379</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;21:00:00&nbsp;-&nbsp;21:59:59</td>
+<td class=reptitle>RAD_ANTATTCH_04</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>316</td>
+<td align=right>0</td>
+<td align=right>316</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>RAD_ANTATTCH_05</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28836276</td>
+<td align=right>279</td>
+<td align=right>0</td>
+<td align=right>279</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;22:00:00&nbsp;-&nbsp;05/15/26&nbsp;22:16:00</td>
+<td class=reptitle>RAD_ANTATTCH_04</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>112</td>
+<td align=right>0</td>
+<td align=right>112</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>RAD_ANTATTCH_05</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28836276</td>
+<td align=right>22</td>
+<td align=right>0</td>
+<td align=right>22</td>
+<td align=right>100.00</td>
+</tr>
+<tr></tr>
+<tr class=repdata>
+<td class=reptitle>BOARD_LABEL</td>
+<td class=reptitle>05/15/26&nbsp;16:10:00&nbsp;-&nbsp;05/15/2026&nbsp;16:59:59</td>
+<td class=reptitle>PCBLASER_05</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28796430</td>
+<td align=right>15</td>
+<td align=right>0</td>
+<td align=right>15</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28828985</td>
+<td align=right>486</td>
+<td align=right>0</td>
+<td align=right>486</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28874844</td>
+<td align=right>549</td>
+<td align=right>0</td>
+<td align=right>549</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28887978</td>
+<td align=right>18</td>
+<td align=right>0</td>
+<td align=right>18</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;17:00:00&nbsp;-&nbsp;17:59:59</td>
+<td class=reptitle>PCBLASER_05</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28796430</td>
+<td align=right>14</td>
+<td align=right>0</td>
+<td align=right>14</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28828985</td>
+<td align=right>496</td>
+<td align=right>0</td>
+<td align=right>496</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28874844</td>
+<td align=right>180</td>
+<td align=right>0</td>
+<td align=right>180</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;18:00:00&nbsp;-&nbsp;18:59:59</td>
+<td class=reptitle>PCBLASER_05</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28796430</td>
+<td align=right>5</td>
+<td align=right>0</td>
+<td align=right>5</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28828985</td>
+<td align=right>699</td>
+<td align=right>0</td>
+<td align=right>699</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28874844</td>
+<td align=right>233</td>
+<td align=right>0</td>
+<td align=right>233</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28887978</td>
+<td align=right>5</td>
+<td align=right>0</td>
+<td align=right>5</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;19:00:00&nbsp;-&nbsp;19:59:59</td>
+<td class=reptitle>PCBLASER_05</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28796430</td>
+<td align=right>5</td>
+<td align=right>0</td>
+<td align=right>5</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28828985</td>
+<td align=right>309</td>
+<td align=right>0</td>
+<td align=right>309</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28874844</td>
+<td align=right>34</td>
+<td align=right>0</td>
+<td align=right>34</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;20:00:00&nbsp;-&nbsp;20:59:59</td>
+<td class=reptitle>PCBLASER_05</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28796430</td>
+<td align=right>33</td>
+<td align=right>0</td>
+<td align=right>33</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28828985</td>
+<td align=right>575</td>
+<td align=right>0</td>
+<td align=right>575</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28874844</td>
+<td align=right>396</td>
+<td align=right>0</td>
+<td align=right>396</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28887978</td>
+<td align=right>10</td>
+<td align=right>0</td>
+<td align=right>10</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;21:00:00&nbsp;-&nbsp;21:59:59</td>
+<td class=reptitle>PCBLASER_05</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28796430</td>
+<td align=right>1</td>
+<td align=right>0</td>
+<td align=right>1</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28874844</td>
+<td align=right>131</td>
+<td align=right>0</td>
+<td align=right>131</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28887978</td>
+<td align=right>6</td>
+<td align=right>0</td>
+<td align=right>6</td>
+<td align=right>100.00</td>
+</tr>
+<tr></tr>
+<tr class=repdata>
+<td class=reptitle>EDGEBONDAOI</td>
+<td class=reptitle>05/15/26&nbsp;16:10:00&nbsp;-&nbsp;05/15/2026&nbsp;16:59:59</td>
+<td class=reptitle>DLNPROFINAOI05</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28866339</td>
+<td align=right>280</td>
+<td align=right>0</td>
+<td align=right>280</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;17:00:00&nbsp;-&nbsp;17:59:59</td>
+<td class=reptitle>DLNPROFINAOI03</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>162</td>
+<td align=right>0</td>
+<td align=right>162</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>DLNPROFINAOI05</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>600</td>
+<td align=right>0</td>
+<td align=right>600</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;18:00:00&nbsp;-&nbsp;18:59:59</td>
+<td class=reptitle>DLNPROFINAOI03</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>624</td>
+<td align=right>0</td>
+<td align=right>624</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>DLNPROFINAOI05</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28847542</td>
+<td align=right>559</td>
+<td align=right>0</td>
+<td align=right>559</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>274</td>
+<td align=right>0</td>
+<td align=right>274</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;19:00:00&nbsp;-&nbsp;19:59:59</td>
+<td class=reptitle>DLNPROFINAOI03</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>731</td>
+<td align=right>0</td>
+<td align=right>731</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>DLNPROFINAOI05</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28847542</td>
+<td align=right>112</td>
+<td align=right>0</td>
+<td align=right>112</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28866342</td>
+<td align=right>390</td>
+<td align=right>0</td>
+<td align=right>390</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28866345</td>
+<td align=right>48</td>
+<td align=right>0</td>
+<td align=right>48</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28866348</td>
+<td align=right>138</td>
+<td align=right>0</td>
+<td align=right>138</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;20:00:00&nbsp;-&nbsp;20:59:59</td>
+<td class=reptitle>DLNPROFINAOI03</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>611</td>
+<td align=right>0</td>
+<td align=right>611</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>DLNPROFINAOI05</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28830177</td>
+<td align=right>48</td>
+<td align=right>0</td>
+<td align=right>48</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28836279</td>
+<td align=right>334</td>
+<td align=right>0</td>
+<td align=right>334</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28836285</td>
+<td align=right>70</td>
+<td align=right>0</td>
+<td align=right>70</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;21:00:00&nbsp;-&nbsp;21:59:59</td>
+<td class=reptitle>DLNPROFINAOI03</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>480</td>
+<td align=right>0</td>
+<td align=right>480</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>DLNPROFINAOI05</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28866339</td>
+<td align=right>288</td>
+<td align=right>0</td>
+<td align=right>288</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;22:00:00&nbsp;-&nbsp;05/15/26&nbsp;22:16:00</td>
+<td class=reptitle>DLNPROFINAOI03</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>204</td>
+<td align=right>0</td>
+<td align=right>204</td>
+<td align=right>100.00</td>
+</tr>
+<tr></tr>
+<tr class=repdata>
+<td class=reptitle>LEAKTEST</td>
+<td class=reptitle>05/15/26&nbsp;16:10:00&nbsp;-&nbsp;05/15/2026&nbsp;16:59:59</td>
+<td class=reptitle>RAD_LEAKTEST_04</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28874844</td>
+<td align=right>289</td>
+<td align=right>0</td>
+<td align=right>289</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>RAD_LEAKTEST_05</td>
+<td class=reptitle>STLA_SRR6P</td>
+<td class=reptitle>28874745</td>
+<td align=right>285</td>
+<td align=right>0</td>
+<td align=right>285</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;17:00:00&nbsp;-&nbsp;17:59:59</td>
+<td class=reptitle>RAD_LEAKTEST_04</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28874844</td>
+<td align=right>430</td>
+<td align=right>0</td>
+<td align=right>430</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>RAD_LEAKTEST_05</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28847538</td>
+<td align=right>243</td>
+<td align=right>0</td>
+<td align=right>243</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>STLA_SRR6P</td>
+<td class=reptitle>28874745</td>
+<td align=right>89</td>
+<td align=right>0</td>
+<td align=right>89</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;18:00:00&nbsp;-&nbsp;18:59:59</td>
+<td class=reptitle>RAD_LEAKTEST_04</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28874844</td>
+<td align=right>453</td>
+<td align=right>0</td>
+<td align=right>453</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>RAD_LEAKTEST_05</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28847538</td>
+<td align=right>374</td>
+<td align=right>0</td>
+<td align=right>374</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;19:00:00&nbsp;-&nbsp;19:59:59</td>
+<td class=reptitle>RAD_LEAKTEST_04</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28874844</td>
+<td align=right>443</td>
+<td align=right>0</td>
+<td align=right>443</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>RAD_LEAKTEST_05</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28836276</td>
+<td align=right>150</td>
+<td align=right>0</td>
+<td align=right>150</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28847538</td>
+<td align=right>115</td>
+<td align=right>0</td>
+<td align=right>115</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;20:00:00&nbsp;-&nbsp;20:59:59</td>
+<td class=reptitle>RAD_LEAKTEST_04</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28874844</td>
+<td align=right>449</td>
+<td align=right>0</td>
+<td align=right>449</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>RAD_LEAKTEST_05</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28836276</td>
+<td align=right>436</td>
+<td align=right>0</td>
+<td align=right>436</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;21:00:00&nbsp;-&nbsp;21:59:59</td>
+<td class=reptitle>RAD_LEAKTEST_04</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>392</td>
+<td align=right>0</td>
+<td align=right>392</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28874844</td>
+<td align=right>10</td>
+<td align=right>0</td>
+<td align=right>10</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>RAD_LEAKTEST_05</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28836276</td>
+<td align=right>447</td>
+<td align=right>0</td>
+<td align=right>447</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28847538</td>
+<td align=right>2</td>
+<td align=right>0</td>
+<td align=right>2</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;22:00:00&nbsp;-&nbsp;05/15/26&nbsp;22:16:00</td>
+<td class=reptitle>RAD_LEAKTEST_04</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>124</td>
+<td align=right>0</td>
+<td align=right>124</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>RAD_LEAKTEST_05</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28836276</td>
+<td align=right>110</td>
+<td align=right>0</td>
+<td align=right>110</td>
+<td align=right>100.00</td>
+</tr>
+<tr></tr>
+<tr class=repdata>
+<td class=reptitle>MOL</td>
+<td class=reptitle>05/15/26&nbsp;16:10:00&nbsp;-&nbsp;05/15/2026&nbsp;16:59:59</td>
+<td class=reptitle>DLNTSTSMOLRDR4</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>276</td>
+<td align=right>0</td>
+<td align=right>276</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>DLNTSTSMOLRDR6</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>324</td>
+<td align=right>0</td>
+<td align=right>324</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;17:00:00&nbsp;-&nbsp;17:59:59</td>
+<td class=reptitle>DLNTSTSMOLRDR4</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>298</td>
+<td align=right>0</td>
+<td align=right>298</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>DLNTSTSMOLRDR6</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>36</td>
+<td align=right>0</td>
+<td align=right>36</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;18:00:00&nbsp;-&nbsp;18:59:59</td>
+<td class=reptitle>DLNTSTSMOLRDR4</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>270</td>
+<td align=right>0</td>
+<td align=right>270</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;19:00:00&nbsp;-&nbsp;19:59:59</td>
+<td class=reptitle>DLNTSTSMOLRDR4</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>419</td>
+<td align=right>0</td>
+<td align=right>419</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>DLNTSTSMOLRDR6</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>372</td>
+<td align=right>0</td>
+<td align=right>372</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;20:00:00&nbsp;-&nbsp;20:59:59</td>
+<td class=reptitle>DLNTSTSMOLRDR4</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>228</td>
+<td align=right>0</td>
+<td align=right>228</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>DLNTSTSMOLRDR6</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>252</td>
+<td align=right>0</td>
+<td align=right>252</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;21:00:00&nbsp;-&nbsp;21:59:59</td>
+<td class=reptitle>DLNTSTSMOLRDR4</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>408</td>
+<td align=right>0</td>
+<td align=right>408</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>DLNTSTSMOLRDR6</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>228</td>
+<td align=right>0</td>
+<td align=right>228</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;22:00:00&nbsp;-&nbsp;05/15/26&nbsp;22:16:00</td>
+<td class=reptitle>DLNTSTSMOLRDR4</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>107</td>
+<td align=right>0</td>
+<td align=right>107</td>
+<td align=right>100.00</td>
+</tr>
+<tr></tr>
+<tr class=repdata>
+<td class=reptitle>PROGRAMMING</td>
+<td class=reptitle>05/15/26&nbsp;16:10:00&nbsp;-&nbsp;05/15/2026&nbsp;16:59:59</td>
+<td class=reptitle>DLNTSTSMOLRDR3</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28830177</td>
+<td align=right>48</td>
+<td align=right>0</td>
+<td align=right>48</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28866339</td>
+<td align=right>216</td>
+<td align=right>0</td>
+<td align=right>216</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;17:00:00&nbsp;-&nbsp;17:59:59</td>
+<td class=reptitle>DLNTSTSMOLRDR3</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28847542</td>
+<td align=right>384</td>
+<td align=right>0</td>
+<td align=right>384</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28866342</td>
+<td align=right>240</td>
+<td align=right>0</td>
+<td align=right>240</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;18:00:00&nbsp;-&nbsp;18:59:59</td>
+<td class=reptitle>DLNTSTSMOLRDR3</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28836279</td>
+<td align=right>48</td>
+<td align=right>0</td>
+<td align=right>48</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28847542</td>
+<td align=right>287</td>
+<td align=right>0</td>
+<td align=right>287</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28866342</td>
+<td align=right>158</td>
+<td align=right>0</td>
+<td align=right>158</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28866348</td>
+<td align=right>32</td>
+<td align=right>0</td>
+<td align=right>32</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;19:00:00&nbsp;-&nbsp;19:59:59</td>
+<td class=reptitle>DLNTSTSMOLRDR3</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28836279</td>
+<td align=right>286</td>
+<td align=right>0</td>
+<td align=right>286</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28836285</td>
+<td align=right>30</td>
+<td align=right>0</td>
+<td align=right>30</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28866345</td>
+<td align=right>48</td>
+<td align=right>0</td>
+<td align=right>48</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28866348</td>
+<td align=right>106</td>
+<td align=right>0</td>
+<td align=right>106</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;20:00:00&nbsp;-&nbsp;20:59:59</td>
+<td class=reptitle>DLNTSTSMOLRDR3</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28836285</td>
+<td align=right>40</td>
+<td align=right>0</td>
+<td align=right>40</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28866339</td>
+<td align=right>232</td>
+<td align=right>0</td>
+<td align=right>232</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;21:00:00&nbsp;-&nbsp;21:59:59</td>
+<td class=reptitle>DLNTSTSMOLRDR3</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28866339</td>
+<td align=right>56</td>
+<td align=right>0</td>
+<td align=right>56</td>
+<td align=right>100.00</td>
+</tr>
+<tr></tr>
+<tr class=repdata>
+<td class=reptitle>ROUTERMILLING</td>
+<td class=reptitle>05/15/26&nbsp;16:10:00&nbsp;-&nbsp;05/15/2026&nbsp;16:59:59</td>
+<td class=reptitle>DLNPROFINRTR_09</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28874844</td>
+<td align=right>121</td>
+<td align=right>0</td>
+<td align=right>121</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>STLA_SRR6P</td>
+<td class=reptitle>28874745</td>
+<td align=right>120</td>
+<td align=right>0</td>
+<td align=right>120</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>DLNPROFINRTR_10</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28847538</td>
+<td align=right>16</td>
+<td align=right>0</td>
+<td align=right>16</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>DLNPROFINRTR_11</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28874844</td>
+<td align=right>233</td>
+<td align=right>0</td>
+<td align=right>233</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;17:00:00&nbsp;-&nbsp;17:59:59</td>
+<td class=reptitle>DLNPROFINRTR_09</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28874844</td>
+<td align=right>350</td>
+<td align=right>0</td>
+<td align=right>350</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>DLNPROFINRTR_10</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28847538</td>
+<td align=right>272</td>
+<td align=right>0</td>
+<td align=right>272</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>DLNPROFINRTR_11</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28874844</td>
+<td align=right>354</td>
+<td align=right>0</td>
+<td align=right>354</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;18:00:00&nbsp;-&nbsp;18:59:59</td>
+<td class=reptitle>DLNPROFINRTR_09</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28874844</td>
+<td align=right>366</td>
+<td align=right>0</td>
+<td align=right>366</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>DLNPROFINRTR_10</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28836276</td>
+<td align=right>306</td>
+<td align=right>0</td>
+<td align=right>306</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28847538</td>
+<td align=right>96</td>
+<td align=right>0</td>
+<td align=right>96</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>DLNPROFINRTR_11</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28874844</td>
+<td align=right>84</td>
+<td align=right>0</td>
+<td align=right>84</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;19:00:00&nbsp;-&nbsp;19:59:59</td>
+<td class=reptitle>DLNPROFINRTR_09</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>222</td>
+<td align=right>0</td>
+<td align=right>222</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28874844</td>
+<td align=right>144</td>
+<td align=right>0</td>
+<td align=right>144</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>DLNPROFINRTR_10</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28836276</td>
+<td align=right>408</td>
+<td align=right>0</td>
+<td align=right>408</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;20:00:00&nbsp;-&nbsp;20:59:59</td>
+<td class=reptitle>DLNPROFINRTR_09</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>396</td>
+<td align=right>0</td>
+<td align=right>396</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>DLNPROFINRTR_10</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28836276</td>
+<td align=right>415</td>
+<td align=right>0</td>
+<td align=right>415</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;21:00:00&nbsp;-&nbsp;21:59:59</td>
+<td class=reptitle>DLNPROFINRTR_09</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>366</td>
+<td align=right>0</td>
+<td align=right>366</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>DLNPROFINRTR_10</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28836276</td>
+<td align=right>104</td>
+<td align=right>0</td>
+<td align=right>104</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28847542</td>
+<td align=right>271</td>
+<td align=right>0</td>
+<td align=right>271</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;22:00:00&nbsp;-&nbsp;05/15/26&nbsp;22:16:00</td>
+<td class=reptitle>DLNPROFINRTR_09</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>60</td>
+<td align=right>0</td>
+<td align=right>60</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>DLNPROFINRTR_10</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28847542</td>
+<td align=right>88</td>
+<td align=right>0</td>
+<td align=right>88</td>
+<td align=right>100.00</td>
+</tr>
+<tr></tr>
+<tr class=repdata>
+<td class=reptitle>SPI_S1</td>
+<td class=reptitle>05/15/26&nbsp;16:10:00&nbsp;-&nbsp;05/15/2026&nbsp;16:59:59</td>
+<td class=reptitle>DLNTSTSMTSPI129</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>286</td>
+<td align=right>0</td>
+<td align=right>286</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;17:00:00&nbsp;-&nbsp;17:59:59</td>
+<td class=reptitle>DLNTSTSMTSPI129</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>819</td>
+<td align=right>0</td>
+<td align=right>819</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28874844</td>
+<td align=right>5</td>
+<td align=right>0</td>
+<td align=right>5</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;18:00:00&nbsp;-&nbsp;18:59:59</td>
+<td class=reptitle>DLNTSTSMTSPI129</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28796430</td>
+<td align=right>9</td>
+<td align=right>0</td>
+<td align=right>9</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28828985</td>
+<td align=right>542</td>
+<td align=right>0</td>
+<td align=right>542</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28874844</td>
+<td align=right>453</td>
+<td align=right>0</td>
+<td align=right>453</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;19:00:00&nbsp;-&nbsp;19:59:59</td>
+<td class=reptitle>DLNTSTSMTSPI129</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>673</td>
+<td align=right>0</td>
+<td align=right>673</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28874844</td>
+<td align=right>288</td>
+<td align=right>0</td>
+<td align=right>288</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;20:00:00&nbsp;-&nbsp;20:59:59</td>
+<td class=reptitle>DLNTSTSMTSPI129</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28796430</td>
+<td align=right>1</td>
+<td align=right>0</td>
+<td align=right>1</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28828985</td>
+<td align=right>371</td>
+<td align=right>0</td>
+<td align=right>371</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28874844</td>
+<td align=right>424</td>
+<td align=right>0</td>
+<td align=right>424</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;21:00:00&nbsp;-&nbsp;21:59:59</td>
+<td class=reptitle>DLNTSTSMTSPI129</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28796430</td>
+<td align=right>5</td>
+<td align=right>0</td>
+<td align=right>5</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28828985</td>
+<td align=right>664</td>
+<td align=right>0</td>
+<td align=right>664</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28874844</td>
+<td align=right>183</td>
+<td align=right>0</td>
+<td align=right>183</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;22:00:00&nbsp;-&nbsp;05/15/26&nbsp;22:16:00</td>
+<td class=reptitle>DLNTSTSMTSPI129</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28796430</td>
+<td align=right>4</td>
+<td align=right>0</td>
+<td align=right>4</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28828985</td>
+<td align=right>252</td>
+<td align=right>0</td>
+<td align=right>252</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28874844</td>
+<td align=right>31</td>
+<td align=right>0</td>
+<td align=right>31</td>
+<td align=right>100.00</td>
+</tr>
+<tr></tr>
+<tr class=repdata>
+<td class=reptitle>XRAY</td>
+<td class=reptitle>05/15/26&nbsp;16:10:00&nbsp;-&nbsp;05/15/2026&nbsp;16:59:59</td>
+<td class=reptitle>DLNTSTSMTXRAY22</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28830177</td>
+<td align=right>48</td>
+<td align=right>0</td>
+<td align=right>48</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28847542</td>
+<td align=right>631</td>
+<td align=right>0</td>
+<td align=right>631</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28866342</td>
+<td align=right>341</td>
+<td align=right>0</td>
+<td align=right>341</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28866345</td>
+<td align=right>16</td>
+<td align=right>0</td>
+<td align=right>16</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28866348</td>
+<td align=right>13</td>
+<td align=right>0</td>
+<td align=right>13</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>DLNTSTSMTXRAY24</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>66</td>
+<td align=right>0</td>
+<td align=right>66</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;17:00:00&nbsp;-&nbsp;17:59:59</td>
+<td class=reptitle>DLNTSTSMTXRAY22</td>
+<td class=reptitle>KIA_SRR5</td>
+<td class=reptitle>28836279</td>
+<td align=right>321</td>
+<td align=right>0</td>
+<td align=right>321</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28836285</td>
+<td align=right>23</td>
+<td align=right>0</td>
+<td align=right>23</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28866345</td>
+<td align=right>32</td>
+<td align=right>0</td>
+<td align=right>32</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28866348</td>
+<td align=right>109</td>
+<td align=right>0</td>
+<td align=right>109</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>DLNTSTSMTXRAY24</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>299</td>
+<td align=right>0</td>
+<td align=right>299</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28874844</td>
+<td align=right>6</td>
+<td align=right>0</td>
+<td align=right>6</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;18:00:00&nbsp;-&nbsp;18:59:59</td>
+<td class=reptitle>DLNTSTSMTXRAY24</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>647</td>
+<td align=right>0</td>
+<td align=right>647</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;19:00:00&nbsp;-&nbsp;19:59:59</td>
+<td class=reptitle>DLNTSTSMTXRAY24</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28796430</td>
+<td align=right>1</td>
+<td align=right>0</td>
+<td align=right>1</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28828985</td>
+<td align=right>396</td>
+<td align=right>0</td>
+<td align=right>396</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28874844</td>
+<td align=right>5</td>
+<td align=right>0</td>
+<td align=right>5</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;20:00:00&nbsp;-&nbsp;20:59:59</td>
+<td class=reptitle>DLNTSTSMTXRAY24</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>617</td>
+<td align=right>0</td>
+<td align=right>617</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28874844</td>
+<td align=right>6</td>
+<td align=right>0</td>
+<td align=right>6</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;21:00:00&nbsp;-&nbsp;21:59:59</td>
+<td class=reptitle>DLNTSTSMTXRAY24</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>633</td>
+<td align=right>0</td>
+<td align=right>633</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28874844</td>
+<td align=right>6</td>
+<td align=right>0</td>
+<td align=right>6</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;22:00:00&nbsp;-&nbsp;05/15/26&nbsp;22:16:00</td>
+<td class=reptitle>DLNTSTSMTXRAY24</td>
+<td class=reptitle>NISSAN_SRR6</td>
+<td class=reptitle>28828985</td>
+<td align=right>159</td>
+<td align=right>0</td>
+<td align=right>159</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28874844</td>
+<td align=right>6</td>
+<td align=right>0</td>
+<td align=right>6</td>
+<td align=right>100.00</td>
+</tr>
+</table>
+<p><button onclick="window.open('https://reman65.aptiv.com/standard/tmp/10_8_73_129_1779562948_fpyield.csv','')">Open Report in Excel</button></p>
+<pre>
+</pre>
+<form>
+<input type=reset value='OK' onclick='location.replace("/std_public/wipreports?mode=0");'>
+</form>
+<table width=100% border=0>
+<tr><td height=10> </td></tr>
+<tr> <td height=4 class='footerbar'>
+<img src='https://reman65.aptiv.com/standard/images/clear.gif' height='2' width='2' alt='clear.gif'></td></tr>
+<tr><td height=5> </td></tr>
+<tr><td align='center' class='xsmalltext'>
+<br>
+<a style='text-decoration: none; color: #0000AA' target='_parent' title='Click to go to the Official Aptiv E&S Mfg Eng MANTIS/FIS Website' href='http://fis.aptiv.com'><b>MANTIS</b></a> is an Aptiv Electronics & Safety Manufacturing Engineering Solution<br>Copyright © 2001 - 2026 All Rights Reserved.<br><i>(5.00.0000)</i>
+</td></tr>
+</table>
+</body>
+</html>

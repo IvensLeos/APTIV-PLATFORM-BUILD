@@ -1,0 +1,504 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN'>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>[REMAN61A] MANTIS: Reports</title>
+<LINK REL='stylesheet' TYPE='text/css' HREF='//reman61a.aptiv.com/standard/styles/generic.css'>
+<script type='text/javascript'>
+function showWindonStatus( ) {
+var WindowStatus = 'MANTIS Version 5.00, Delphi Electronics and Safety Manufacturing Engineering, Copyright © 2001 - 2026, All Rights Reserved.';
+window.status=WindowStatus;
+}
+  var keyheld = 0
+  var maxkeys = 20
+  function keydown(event) {
+    var ignorKeys = [16, 17, 18, 20, 33, 34, 35, 36, 37, 38, 39, 40, 91, 93];
+    //alert(event.keyCode);
+    if(event.keyCode == 116) {
+      b = prompt("Refresh the page?",'');
+    	if(b == null) {
+        event.keyCode = 0;
+        event.returnValue = false;
+        return false;
+      }
+    }
+    if (contains(ignorKeys, event.keyCode) == false) {
+     	if (keyheld > maxkeys) {
+        do {
+          a = prompt('Possible STUCK KEY. Check keyboard, then click Cancel','' );
+    	  } while (a == '')
+        if (a != '') {
+          keyheld = 0
+        }
+       } else {
+    			   keyheld+=1
+       }
+     }
+  }
+  function keyup( ) {
+      keyheld = 0
+  }
+function contains(a, obj) {
+    for (var i = 0; i < a.length; i++) {
+        if (a[i] === obj) {
+            return true;
+        }
+    }
+    return false;
+}
+</script>
+<script type='text/javascript' src='//reman61a.aptiv.com/standard/jscripts/overlib.js'></script>
+<script type='text/javascript' src='//reman61a.aptiv.com/standard/jscripts/ajaxroutine.js'>
+
+    /***********************************************
+    * Basic Ajax Routine- Â© Dynamic Drive DHTML code library (www.dynamicdrive.com)
+    * Dynamic Ajax Content- Â© Dynamic Drive DHTML code library (www.dynamicdrive.com)
+    * This notice MUST stay intact for legal use
+    * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+    ***********************************************/
+    </script>
+    
+<script type='text/javascript'>
+    var loginTimer;
+
+    function logout(redirect) {
+        let url = location.protocol + '//' + window.location.hostname;
+        const request = new XMLHttpRequest();
+        localStorage.removeItem('LoginUSER');
+
+        document.getElementById('logged-in').innerHTML = '';
+        document.getElementById('logged-in').style.visibility = 'collapse';
+
+        window.onload = null;
+        window.onmousemove = null;
+        window.onmousedown = null;
+        window.ontouchstart = null;
+        window.ontouchmove = null;
+        window.onclick = null;
+        window.onkeydown = null;
+        window.removeEventListener('scroll', resetTimer, true);
+
+        request.open('GET', url + '/std_auth/dummy_login', false, 'logout', '');
+        if (redirect) {
+            request.onreadystatechange = function () {
+                window.parent.location.href = url;
+            }
+        }
+        request.send();
+    }
+
+    function resetTimer() {
+        clearTimeout(loginTimer);
+
+        if (localStorage.getItem('LoginUSER') == null)
+        {
+            logout();
+        } else {
+            loginTimer = setTimeout(logout, localStorage.getItem('LoginTimeout'), false);
+        }
+    }
+
+    // '' must be replaced with value
+    // TCL: $userId and $userID
+    // PHP: none
+    if ('' != '') {
+        localStorage.setItem('LoginUSER', '');
+        // Do not remove the next comment line
+        localStorage.setItem('LoginTimeout', 300000);
+    }
+
+    loginUser = localStorage.getItem('LoginUSER');
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const div = document.createElement('div');
+        div.className = 'floating-div';
+        div.id = 'logged-in';
+        document.body.appendChild(div);
+
+        if (loginUser != '' && loginUser != null) {
+            document.getElementById('logged-in').innerHTML = loginUser + "<button class='floating-button' onclick='logout(true)'>Logout</button>";
+            document.getElementById('logged-in').style.visibility = 'visible';
+        } else {
+            document.getElementById('logged-in').innerHTML = '';
+            document.getElementById('logged-in').style.visibility = 'collapse';
+        }
+    }, false);
+
+    if (localStorage.getItem('LoginUSER') != null) {
+        window.onload = resetTimer;
+        window.onmousemove = resetTimer;
+        window.onmousedown = resetTimer;
+        window.ontouchstart = resetTimer;
+        window.ontouchmove = resetTimer;
+        window.onclick = resetTimer;
+        window.onkeydown = resetTimer;
+        window.addEventListener('scroll', resetTimer, true);
+    }
+</script>
+
+
+</head>
+<body onLoad='showWindonStatus();' onkeydown='keydown(event);' onkeyup='keyup();'>
+<div id='overDiv' style='position:absolute; visibility:hidden; z-index:1000;'></div>
+<script type='text/javascript' src='//reman61a.aptiv.com/standard/jscripts/reportHelp.js'></script>
+<div class='pagetitle'>Reports</div>
+<HR>
+<BR>
+<pre>
+</pre>
+<table cellspacing=0>
+<tr valign=top class=reptitle><th nowrap align=right>Title:</th><td>&nbsp;</td><td> </td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>Options:</th><td>&nbsp;</td><td> -fpyield_fix hourly station productfamily partnumber -disallow station GUMP_QUALITY DLNPROFINLKTMRR DLNPROFINRTR08 DLNPROFINRTR_07 DLNTSTSMTICT17 DLNTSTSMTICT18 DLNTSTSMTICTIL1 DLNTSTSMTICTIL2 DLNTSTSMTICTIL3 DLNTSTSMTICTIL4 DLNTSTSMTICTIL5 DLNTSTSMTICTIL7 DLNTSTSMTICTIL9 DLNTSTSMTICTL10 DLNTSTSMTICTL12 DLNTSTSMTICTL13 DLNTSTSMTICTL15 ECU_ICT_01 INLINE_ICT_01</td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>Report Name:</th><td>&nbsp;</td><td> X_MANTIS</td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>Maximum Events:</th><td>&nbsp;</td><td> 500000000</td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>From:</th><td>&nbsp;</td><td> 05/15/26 16:10:00</td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>To:</th><td>&nbsp;</td><td> 05/15/26 22:16:00</td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>Process:</th><td>&nbsp;</td><td> BOARD_LABEL,&nbspSPI_S1,&nbspSPI_S2,&nbspUNDERFILLAOI,&nbspAOI_PTH,&nbspXRAY,&nbspICT,&nbspPROGRAMMING,&nbspMOL,&nbspSINGULATION,&nbspEDGEBONDAOI,&nbspROUTERMILLING,&nbspANTENNAATTACH,&nbspLEAKTEST,&nbspSPRAYCOAT,&nbspSPRAYCOAT_L3,&nbspCONT_LOADPCB,&nbspSCREWDRIVE</td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>Report Time:</th><td>&nbsp;</td><td> 05/23/2026 14:03:05</td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>System:</th><td>&nbsp;</td><td> reman61a.aptiv.com</td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>Language:</th><td>&nbsp;</td><td> english</td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>Data Source:</th><td>&nbsp;</td><td> Real-Time System</td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>Filter:</th><td>&nbsp;</td><td> Dis-allow where station = GUMP_QUALITY or DLNPROFINLKTMRR or DLNPROFINRTR08 or DLNPROFINRTR_07 or DLNTSTSMTICT17 or DLNTSTSMTICT18 or DLNTSTSMTICTIL1 or DLNTSTSMTICTIL2 or DLNTSTSMTICTIL3 or DLNTSTSMTICTIL4 or DLNTSTSMTICTIL5 or DLNTSTSMTICTIL7 or DLNTSTSMTICTIL9 or DLNTSTSMTICTL10 or DLNTSTSMTICTL12 or DLNTSTSMTICTL13 or DLNTSTSMTICTL15 or ECU_ICT_01 or INLINE_ICT_01</td></tr>
+</table>
+<hr><h4>First-pass Yield Report : Process,Time Range,Station,Product Family,Part Number</h4>
+<p><button onclick="window.open('//reman61a.aptiv.com/standard/tmp/10_8_73_129_1779562986_fpyield.csv','')">Open Report in Excel</button></p>
+<table border=0 cellspacing=1 cellpadding=4>
+<tr>
+<td colspan=5></td>
+<th class=reptitle colspan=4>First-pass</th>
+<th class=reptitle rowspan=2>Total Tested</th>
+<th class=reptitle rowspan=2>First-pass Ratio</th>
+</tr>
+<tr class=reptitle>
+<th align=left>Process</th>
+<th align=left>Time Range</th>
+<th align=left>Station</th>
+<th align=left>Product Family</th>
+<th align=left>Part Number</th>
+<th aligh=right>Pass</th>
+<th aligh=right>Fail</th>
+<th aligh=right>Total</th>
+<th aligh=right>Yield</th>
+</tr>
+<tr class=repdata>
+<td class=reptitle>BOARD_LABEL</td>
+<td class=reptitle>05/15/2026&nbsp;17:00:00&nbsp;-&nbsp;17:59:59</td>
+<td class=reptitle>PCBLASER_03</td>
+<td class=reptitle>FORD_ADAS_FWC_DAT2.0</td>
+<td class=reptitle>28739235</td>
+<td align=right>2016</td>
+<td align=right>0</td>
+<td align=right>2016</td>
+<td align=right>100.00</td>
+<td align=right>2016</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28739236</td>
+<td align=right>140</td>
+<td align=right>0</td>
+<td align=right>140</td>
+<td align=right>100.00</td>
+<td align=right>140</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;18:00:00&nbsp;-&nbsp;18:59:59</td>
+<td class=reptitle>PCBLASER_03</td>
+<td class=reptitle>FORD_ADAS_FWC_DAT2.0</td>
+<td class=reptitle>28739235</td>
+<td align=right>1288</td>
+<td align=right>0</td>
+<td align=right>1288</td>
+<td align=right>100.00</td>
+<td align=right>1288</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28739236</td>
+<td align=right>56</td>
+<td align=right>0</td>
+<td align=right>56</td>
+<td align=right>100.00</td>
+<td align=right>56</td>
+<td align=right>100.00</td>
+</tr>
+<tr></tr>
+<tr class=repdata>
+<td class=reptitle>ICT</td>
+<td class=reptitle>05/15/26&nbsp;16:10:00&nbsp;-&nbsp;05/15/2026&nbsp;16:59:59</td>
+<td class=reptitle>DLNTSTSMTICTIL8</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28609683</td>
+<td align=right>437</td>
+<td align=right>0</td>
+<td align=right>437</td>
+<td align=right>100.00</td>
+<td align=right>1036</td>
+<td align=right>42.18</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;17:00:00&nbsp;-&nbsp;17:59:59</td>
+<td class=reptitle>DLNTSTSMTICTIL8</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28609683</td>
+<td align=right>0</td>
+<td align=right>0</td>
+<td align=right>0</td>
+<td align=right>0.00</td>
+<td align=right>753</td>
+<td align=right>0.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;18:00:00&nbsp;-&nbsp;18:59:59</td>
+<td class=reptitle>DLNTSTSMTICTIL8</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28765748</td>
+<td align=right>1070</td>
+<td align=right>0</td>
+<td align=right>1070</td>
+<td align=right>100.00</td>
+<td align=right>1070</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;19:00:00&nbsp;-&nbsp;19:59:59</td>
+<td class=reptitle>DLNTSTSMTICTIL8</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28765748</td>
+<td align=right>1105</td>
+<td align=right>0</td>
+<td align=right>1105</td>
+<td align=right>100.00</td>
+<td align=right>1160</td>
+<td align=right>95.26</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;20:00:00&nbsp;-&nbsp;20:59:59</td>
+<td class=reptitle>DLNTSTSMTICTIL8</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28765748</td>
+<td align=right>658</td>
+<td align=right>0</td>
+<td align=right>658</td>
+<td align=right>100.00</td>
+<td align=right>1074</td>
+<td align=right>61.27</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;21:00:00&nbsp;-&nbsp;21:59:59</td>
+<td class=reptitle>DLNTSTSMTICTIL8</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28765748</td>
+<td align=right>342</td>
+<td align=right>0</td>
+<td align=right>342</td>
+<td align=right>100.00</td>
+<td align=right>504</td>
+<td align=right>67.86</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;22:00:00&nbsp;-&nbsp;05/15/26&nbsp;22:16:00</td>
+<td class=reptitle>DLNTSTSMTICTIL8</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28765748</td>
+<td align=right>101</td>
+<td align=right>0</td>
+<td align=right>101</td>
+<td align=right>100.00</td>
+<td align=right>177</td>
+<td align=right>57.06</td>
+</tr>
+<tr></tr>
+<tr class=repdata>
+<td class=reptitle>SPI_S1</td>
+<td class=reptitle>05/15/26&nbsp;16:10:00&nbsp;-&nbsp;05/15/2026&nbsp;16:59:59</td>
+<td class=reptitle>DLNTSTSMTSPI118</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28609683</td>
+<td align=right>28</td>
+<td align=right>0</td>
+<td align=right>28</td>
+<td align=right>100.00</td>
+<td align=right>28</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;17:00:00&nbsp;-&nbsp;17:59:59</td>
+<td class=reptitle>DLNTSTSMTSPI118</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28609683</td>
+<td align=right>1090</td>
+<td align=right>0</td>
+<td align=right>1090</td>
+<td align=right>100.00</td>
+<td align=right>1090</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;18:00:00&nbsp;-&nbsp;18:59:59</td>
+<td class=reptitle>DLNTSTSMTSPI118</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28609683</td>
+<td align=right>3185</td>
+<td align=right>0</td>
+<td align=right>3185</td>
+<td align=right>100.00</td>
+<td align=right>3185</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28609684</td>
+<td align=right>28</td>
+<td align=right>0</td>
+<td align=right>28</td>
+<td align=right>100.00</td>
+<td align=right>28</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;19:00:00&nbsp;-&nbsp;19:59:59</td>
+<td class=reptitle>DLNTSTSMTSPI118</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28609683</td>
+<td align=right>783</td>
+<td align=right>0</td>
+<td align=right>783</td>
+<td align=right>100.00</td>
+<td align=right>783</td>
+<td align=right>100.00</td>
+</tr>
+<tr></tr>
+<tr class=repdata>
+<td class=reptitle>SPI_S2</td>
+<td class=reptitle>05/15/26&nbsp;16:10:00&nbsp;-&nbsp;05/15/2026&nbsp;16:59:59</td>
+<td class=reptitle>DLNTSTSMTSPI118</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28765748</td>
+<td align=right>768</td>
+<td align=right>0</td>
+<td align=right>768</td>
+<td align=right>100.00</td>
+<td align=right>768</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;19:00:00&nbsp;-&nbsp;19:59:59</td>
+<td class=reptitle>DLNTSTSMTSPI118</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28609683</td>
+<td align=right>952</td>
+<td align=right>0</td>
+<td align=right>952</td>
+<td align=right>100.00</td>
+<td align=right>952</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;20:00:00&nbsp;-&nbsp;20:59:59</td>
+<td class=reptitle>DLNTSTSMTSPI118</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28609683</td>
+<td align=right>1763</td>
+<td align=right>0</td>
+<td align=right>1763</td>
+<td align=right>100.00</td>
+<td align=right>1763</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;21:00:00&nbsp;-&nbsp;21:59:59</td>
+<td class=reptitle>DLNTSTSMTSPI118</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28609683</td>
+<td align=right>2067</td>
+<td align=right>0</td>
+<td align=right>2067</td>
+<td align=right>100.00</td>
+<td align=right>2067</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;22:00:00&nbsp;-&nbsp;05/15/26&nbsp;22:16:00</td>
+<td class=reptitle>DLNTSTSMTSPI118</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28609683</td>
+<td align=right>307</td>
+<td align=right>0</td>
+<td align=right>307</td>
+<td align=right>100.00</td>
+<td align=right>307</td>
+<td align=right>100.00</td>
+</tr>
+<tr></tr>
+<tr class=repdata>
+<td class=reptitle>UNDERFILLAOI</td>
+<td class=reptitle>05/15/2026&nbsp;21:00:00&nbsp;-&nbsp;21:59:59</td>
+<td class=reptitle>DLNTSTSMTAOIUF1</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28765748</td>
+<td align=right>28</td>
+<td align=right>0</td>
+<td align=right>28</td>
+<td align=right>100.00</td>
+<td align=right>28</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;22:00:00&nbsp;-&nbsp;05/15/26&nbsp;22:16:00</td>
+<td class=reptitle>DLNTSTSMTAOIUF1</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28765748</td>
+<td align=right>84</td>
+<td align=right>0</td>
+<td align=right>84</td>
+<td align=right>100.00</td>
+<td align=right>84</td>
+<td align=right>100.00</td>
+</tr>
+</table>
+<p><button onclick="window.open('//reman61a.aptiv.com/standard/tmp/10_8_73_129_1779562986_fpyield.csv','')">Open Report in Excel</button></p>
+<pre>
+</pre>
+<form>
+<input type=reset value='OK' onclick='location.replace("/std_public/wipreports?mode=0");'>
+</form>
+<table width=100% border=0>
+<tr><td height=10> </td></tr>
+<tr> <td height=4 class='footerbar'>
+<img src='//reman61a.aptiv.com/standard/images/clear.gif' height='2' width='2' alt='clear.gif'></td></tr>
+<tr><td height=5> </td></tr>
+<tr><td align='center' class='xsmalltext'>
+<br>
+<a style='text-decoration: none; color: #0000AA' target='_parent' title='Click to go to the Official Aptiv E&S Mfg Eng MANTIS/FIS Website' href='http://fis.aptiv.com'><b>MANTIS</b></a> is an Aptiv Electronics & Safety Manufacturing Engineering Solution<br>Copyright © 2001 - 2026 All Rights Reserved.<br><i>(5.00.0000)</i>
+</td></tr>
+</table>
+</body>
+</html>

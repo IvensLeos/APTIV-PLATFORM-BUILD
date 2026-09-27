@@ -1,0 +1,907 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN'>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>[REMAN61A] MANTIS: Reports</title>
+<LINK REL='stylesheet' TYPE='text/css' HREF='//reman61a.aptiv.com/standard/styles/generic.css'>
+<script type='text/javascript'>
+function showWindonStatus( ) {
+var WindowStatus = 'MANTIS Version 5.00, Delphi Electronics and Safety Manufacturing Engineering, Copyright © 2001 - 2026, All Rights Reserved.';
+window.status=WindowStatus;
+}
+  var keyheld = 0
+  var maxkeys = 20
+  function keydown(event) {
+    var ignorKeys = [16, 17, 18, 20, 33, 34, 35, 36, 37, 38, 39, 40, 91, 93];
+    //alert(event.keyCode);
+    if(event.keyCode == 116) {
+      b = prompt("Refresh the page?",'');
+    	if(b == null) {
+        event.keyCode = 0;
+        event.returnValue = false;
+        return false;
+      }
+    }
+    if (contains(ignorKeys, event.keyCode) == false) {
+     	if (keyheld > maxkeys) {
+        do {
+          a = prompt('Possible STUCK KEY. Check keyboard, then click Cancel','' );
+    	  } while (a == '')
+        if (a != '') {
+          keyheld = 0
+        }
+       } else {
+    			   keyheld+=1
+       }
+     }
+  }
+  function keyup( ) {
+      keyheld = 0
+  }
+function contains(a, obj) {
+    for (var i = 0; i < a.length; i++) {
+        if (a[i] === obj) {
+            return true;
+        }
+    }
+    return false;
+}
+</script>
+<script type='text/javascript' src='//reman61a.aptiv.com/standard/jscripts/overlib.js'></script>
+<script type='text/javascript' src='//reman61a.aptiv.com/standard/jscripts/ajaxroutine.js'>
+
+    /***********************************************
+    * Basic Ajax Routine- Â© Dynamic Drive DHTML code library (www.dynamicdrive.com)
+    * Dynamic Ajax Content- Â© Dynamic Drive DHTML code library (www.dynamicdrive.com)
+    * This notice MUST stay intact for legal use
+    * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+    ***********************************************/
+    </script>
+    
+<script type='text/javascript'>
+    var loginTimer;
+
+    function logout(redirect) {
+        let url = location.protocol + '//' + window.location.hostname;
+        const request = new XMLHttpRequest();
+        localStorage.removeItem('LoginUSER');
+
+        document.getElementById('logged-in').innerHTML = '';
+        document.getElementById('logged-in').style.visibility = 'collapse';
+
+        window.onload = null;
+        window.onmousemove = null;
+        window.onmousedown = null;
+        window.ontouchstart = null;
+        window.ontouchmove = null;
+        window.onclick = null;
+        window.onkeydown = null;
+        window.removeEventListener('scroll', resetTimer, true);
+
+        request.open('GET', url + '/std_auth/dummy_login', false, 'logout', '');
+        if (redirect) {
+            request.onreadystatechange = function () {
+                window.parent.location.href = url;
+            }
+        }
+        request.send();
+    }
+
+    function resetTimer() {
+        clearTimeout(loginTimer);
+
+        if (localStorage.getItem('LoginUSER') == null)
+        {
+            logout();
+        } else {
+            loginTimer = setTimeout(logout, localStorage.getItem('LoginTimeout'), false);
+        }
+    }
+
+    // '' must be replaced with value
+    // TCL: $userId and $userID
+    // PHP: none
+    if ('' != '') {
+        localStorage.setItem('LoginUSER', '');
+        // Do not remove the next comment line
+        localStorage.setItem('LoginTimeout', 300000);
+    }
+
+    loginUser = localStorage.getItem('LoginUSER');
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const div = document.createElement('div');
+        div.className = 'floating-div';
+        div.id = 'logged-in';
+        document.body.appendChild(div);
+
+        if (loginUser != '' && loginUser != null) {
+            document.getElementById('logged-in').innerHTML = loginUser + "<button class='floating-button' onclick='logout(true)'>Logout</button>";
+            document.getElementById('logged-in').style.visibility = 'visible';
+        } else {
+            document.getElementById('logged-in').innerHTML = '';
+            document.getElementById('logged-in').style.visibility = 'collapse';
+        }
+    }, false);
+
+    if (localStorage.getItem('LoginUSER') != null) {
+        window.onload = resetTimer;
+        window.onmousemove = resetTimer;
+        window.onmousedown = resetTimer;
+        window.ontouchstart = resetTimer;
+        window.ontouchmove = resetTimer;
+        window.onclick = resetTimer;
+        window.onkeydown = resetTimer;
+        window.addEventListener('scroll', resetTimer, true);
+    }
+</script>
+
+
+</head>
+<body onLoad='showWindonStatus();' onkeydown='keydown(event);' onkeyup='keyup();'>
+<div id='overDiv' style='position:absolute; visibility:hidden; z-index:1000;'></div>
+<script type='text/javascript' src='//reman61a.aptiv.com/standard/jscripts/reportHelp.js'></script>
+<div class='pagetitle'>Reports</div>
+<HR>
+<BR>
+<pre>
+</pre>
+<table cellspacing=0>
+<tr valign=top class=reptitle><th nowrap align=right>Title:</th><td>&nbsp;</td><td> </td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>Options:</th><td>&nbsp;</td><td> -fpyield_fix hourly station productfamily partnumber -disallow station GUMP_QUALITY DLNPROFINLKTMRR DLNPROFINRTR08 DLNPROFINRTR_07 DLNTSTSMTICT17 DLNTSTSMTICT18 DLNTSTSMTICTIL1 DLNTSTSMTICTIL2 DLNTSTSMTICTIL3 DLNTSTSMTICTIL4 DLNTSTSMTICTIL5 DLNTSTSMTICTIL7 DLNTSTSMTICTIL9 DLNTSTSMTICTL10 DLNTSTSMTICTL12 DLNTSTSMTICTL13 DLNTSTSMTICTL15 ECU_ICT_01 INLINE_ICT_01</td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>Report Name:</th><td>&nbsp;</td><td> X_MANTIS</td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>Maximum Events:</th><td>&nbsp;</td><td> 500000000</td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>From:</th><td>&nbsp;</td><td> 05/15/26 22:16:00</td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>To:</th><td>&nbsp;</td><td> 05/16/26 06:40:00</td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>Process:</th><td>&nbsp;</td><td> BOARD_LABEL,&nbspSPI_S1,&nbspSPI_S2,&nbspUNDERFILLAOI,&nbspAOI_PTH,&nbspXRAY,&nbspICT,&nbspPROGRAMMING,&nbspMOL,&nbspSINGULATION,&nbspEDGEBONDAOI,&nbspROUTERMILLING,&nbspANTENNAATTACH,&nbspLEAKTEST,&nbspSPRAYCOAT,&nbspSPRAYCOAT_L3,&nbspCONT_LOADPCB,&nbspSCREWDRIVE</td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>Report Time:</th><td>&nbsp;</td><td> 05/23/2026 14:06:19</td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>System:</th><td>&nbsp;</td><td> reman61a.aptiv.com</td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>Language:</th><td>&nbsp;</td><td> english</td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>Data Source:</th><td>&nbsp;</td><td> Real-Time System</td></tr>
+<tr valign=top class=reptitle><th nowrap align=right>Filter:</th><td>&nbsp;</td><td> Dis-allow where station = GUMP_QUALITY or DLNPROFINLKTMRR or DLNPROFINRTR08 or DLNPROFINRTR_07 or DLNTSTSMTICT17 or DLNTSTSMTICT18 or DLNTSTSMTICTIL1 or DLNTSTSMTICTIL2 or DLNTSTSMTICTIL3 or DLNTSTSMTICTIL4 or DLNTSTSMTICTIL5 or DLNTSTSMTICTIL7 or DLNTSTSMTICTIL9 or DLNTSTSMTICTL10 or DLNTSTSMTICTL12 or DLNTSTSMTICTL13 or DLNTSTSMTICTL15 or ECU_ICT_01 or INLINE_ICT_01</td></tr>
+</table>
+<hr><h4>First-pass Yield Report : Process,Time Range,Station,Product Family,Part Number</h4>
+<p><button onclick="window.open('//reman61a.aptiv.com/standard/tmp/10_8_73_129_1779563180_fpyield.csv','')">Open Report in Excel</button></p>
+<table border=0 cellspacing=1 cellpadding=4>
+<tr>
+<td colspan=5></td>
+<th class=reptitle colspan=4>First-pass</th>
+<th class=reptitle rowspan=2>Total Tested</th>
+<th class=reptitle rowspan=2>First-pass Ratio</th>
+</tr>
+<tr class=reptitle>
+<th align=left>Process</th>
+<th align=left>Time Range</th>
+<th align=left>Station</th>
+<th align=left>Product Family</th>
+<th align=left>Part Number</th>
+<th aligh=right>Pass</th>
+<th aligh=right>Fail</th>
+<th aligh=right>Total</th>
+<th aligh=right>Yield</th>
+</tr>
+<tr class=repdata>
+<td class=reptitle>AOI_PTH</td>
+<td class=reptitle>05/15/2026&nbsp;23:00:00&nbsp;-&nbsp;23:59:59</td>
+<td class=reptitle>DLNTSTSMTPTH3</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28609683</td>
+<td align=right>4449</td>
+<td align=right>0</td>
+<td align=right>4449</td>
+<td align=right>100.00</td>
+<td align=right>4449</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/16/2026&nbsp;00:00:00&nbsp;-&nbsp;00:59:59</td>
+<td class=reptitle>DLNTSTSMTPTH3</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28609683</td>
+<td align=right>641</td>
+<td align=right>0</td>
+<td align=right>641</td>
+<td align=right>100.00</td>
+<td align=right>641</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/16/2026&nbsp;02:00:00&nbsp;-&nbsp;02:59:59</td>
+<td class=reptitle>DLNTSTSMTPTH3</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28765748</td>
+<td align=right>1290</td>
+<td align=right>0</td>
+<td align=right>1290</td>
+<td align=right>100.00</td>
+<td align=right>1290</td>
+<td align=right>100.00</td>
+</tr>
+<tr></tr>
+<tr class=repdata>
+<td class=reptitle>BOARD_LABEL</td>
+<td class=reptitle>05/15/2026&nbsp;23:00:00&nbsp;-&nbsp;23:59:59</td>
+<td class=reptitle>PCBLASER_03</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28609683</td>
+<td align=right>84</td>
+<td align=right>0</td>
+<td align=right>84</td>
+<td align=right>100.00</td>
+<td align=right>84</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>FORD_ADAS_FWC_DAT2.0</td>
+<td class=reptitle>28739235</td>
+<td align=right>700</td>
+<td align=right>0</td>
+<td align=right>700</td>
+<td align=right>100.00</td>
+<td align=right>700</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>PCBLASER_05</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28765748</td>
+<td align=right>1064</td>
+<td align=right>0</td>
+<td align=right>1064</td>
+<td align=right>100.00</td>
+<td align=right>1064</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/16/2026&nbsp;02:00:00&nbsp;-&nbsp;02:59:59</td>
+<td class=reptitle>PCBLASER_05</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28765748</td>
+<td align=right>28</td>
+<td align=right>0</td>
+<td align=right>28</td>
+<td align=right>100.00</td>
+<td align=right>28</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/16/2026&nbsp;03:00:00&nbsp;-&nbsp;03:59:59</td>
+<td class=reptitle>PCBLASER_05</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28765748</td>
+<td align=right>308</td>
+<td align=right>0</td>
+<td align=right>308</td>
+<td align=right>100.00</td>
+<td align=right>308</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/16/2026&nbsp;05:00:00&nbsp;-&nbsp;05:59:59</td>
+<td class=reptitle>PCBLASER_05</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28765747</td>
+<td align=right>1</td>
+<td align=right>0</td>
+<td align=right>1</td>
+<td align=right>100.00</td>
+<td align=right>1</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28765748</td>
+<td align=right>503</td>
+<td align=right>0</td>
+<td align=right>503</td>
+<td align=right>100.00</td>
+<td align=right>503</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/16/2026&nbsp;06:00:00&nbsp;-&nbsp;05/16/26&nbsp;06:40:00</td>
+<td class=reptitle>PCBLASER_03</td>
+<td class=reptitle>IFV600</td>
+<td class=reptitle>28886327</td>
+<td align=right>6</td>
+<td align=right>0</td>
+<td align=right>6</td>
+<td align=right>100.00</td>
+<td align=right>6</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28890763</td>
+<td align=right>42</td>
+<td align=right>0</td>
+<td align=right>42</td>
+<td align=right>100.00</td>
+<td align=right>42</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>PCBLASER_05</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28765748</td>
+<td align=right>896</td>
+<td align=right>0</td>
+<td align=right>896</td>
+<td align=right>100.00</td>
+<td align=right>896</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>PCBLASER_06</td>
+<td class=reptitle>FORD_ADAS_IFV300</td>
+<td class=reptitle>28584413</td>
+<td align=right>8</td>
+<td align=right>0</td>
+<td align=right>8</td>
+<td align=right>100.00</td>
+<td align=right>8</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28584414</td>
+<td align=right>2</td>
+<td align=right>0</td>
+<td align=right>2</td>
+<td align=right>100.00</td>
+<td align=right>2</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28713096</td>
+<td align=right>24</td>
+<td align=right>0</td>
+<td align=right>24</td>
+<td align=right>100.00</td>
+<td align=right>24</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28826144</td>
+<td align=right>166</td>
+<td align=right>0</td>
+<td align=right>166</td>
+<td align=right>100.00</td>
+<td align=right>166</td>
+<td align=right>100.00</td>
+</tr>
+<tr></tr>
+<tr class=repdata>
+<td class=reptitle>ICT</td>
+<td class=reptitle>05/15/26&nbsp;22:16:00&nbsp;-&nbsp;05/15/2026&nbsp;22:59:59</td>
+<td class=reptitle>DLNTSTSMTICTIL8</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28765748</td>
+<td align=right>25</td>
+<td align=right>0</td>
+<td align=right>25</td>
+<td align=right>100.00</td>
+<td align=right>133</td>
+<td align=right>18.80</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;23:00:00&nbsp;-&nbsp;23:59:59</td>
+<td class=reptitle>DLNTSTSMTICTIL8</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28609683</td>
+<td align=right>308</td>
+<td align=right>0</td>
+<td align=right>308</td>
+<td align=right>100.00</td>
+<td align=right>308</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/16/2026&nbsp;00:00:00&nbsp;-&nbsp;00:59:59</td>
+<td class=reptitle>DLNTSTSMTICTIL8</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28609683</td>
+<td align=right>1747</td>
+<td align=right>0</td>
+<td align=right>1747</td>
+<td align=right>100.00</td>
+<td align=right>1747</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/16/2026&nbsp;01:00:00&nbsp;-&nbsp;01:59:59</td>
+<td class=reptitle>DLNTSTSMTICTIL8</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28609683</td>
+<td align=right>1896</td>
+<td align=right>0</td>
+<td align=right>1896</td>
+<td align=right>100.00</td>
+<td align=right>1896</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/16/2026&nbsp;02:00:00&nbsp;-&nbsp;02:59:59</td>
+<td class=reptitle>DLNTSTSMTICTIL8</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28609683</td>
+<td align=right>1068</td>
+<td align=right>0</td>
+<td align=right>1068</td>
+<td align=right>100.00</td>
+<td align=right>1484</td>
+<td align=right>71.97</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/16/2026&nbsp;03:00:00&nbsp;-&nbsp;03:59:59</td>
+<td class=reptitle>DLNTSTSMTICTIL8</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28609683</td>
+<td align=right>0</td>
+<td align=right>0</td>
+<td align=right>0</td>
+<td align=right>0.00</td>
+<td align=right>1126</td>
+<td align=right>0.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/16/2026&nbsp;04:00:00&nbsp;-&nbsp;04:59:59</td>
+<td class=reptitle>DLNTSTSMTICTIL8</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28765748</td>
+<td align=right>941</td>
+<td align=right>0</td>
+<td align=right>941</td>
+<td align=right>100.00</td>
+<td align=right>941</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/16/2026&nbsp;05:00:00&nbsp;-&nbsp;05:59:59</td>
+<td class=reptitle>DLNTSTSMTICTIL8</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28765748</td>
+<td align=right>264</td>
+<td align=right>0</td>
+<td align=right>264</td>
+<td align=right>100.00</td>
+<td align=right>1225</td>
+<td align=right>21.55</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/16/2026&nbsp;06:00:00&nbsp;-&nbsp;05/16/26&nbsp;06:40:00</td>
+<td class=reptitle>DLNTSTSMTICTIL8</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28765748</td>
+<td align=right>0</td>
+<td align=right>0</td>
+<td align=right>0</td>
+<td align=right>0.00</td>
+<td align=right>103</td>
+<td align=right>0.00</td>
+</tr>
+<tr></tr>
+<tr class=repdata>
+<td class=reptitle>SPI_S1</td>
+<td class=reptitle>05/15/26&nbsp;22:16:00&nbsp;-&nbsp;05/15/2026&nbsp;22:59:59</td>
+<td class=reptitle>DLNTSTSMTSPI118</td>
+<td class=reptitle>FORD_ADAS_FWC_DAT2.0</td>
+<td class=reptitle>28739235</td>
+<td align=right>56</td>
+<td align=right>0</td>
+<td align=right>56</td>
+<td align=right>100.00</td>
+<td align=right>56</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28739236</td>
+<td align=right>56</td>
+<td align=right>0</td>
+<td align=right>56</td>
+<td align=right>100.00</td>
+<td align=right>56</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/15/2026&nbsp;23:00:00&nbsp;-&nbsp;23:59:59</td>
+<td class=reptitle>DLNTSTSMTSPI118</td>
+<td class=reptitle>FORD_ADAS_FWC_DAT2.0</td>
+<td class=reptitle>28739235</td>
+<td align=right>527</td>
+<td align=right>0</td>
+<td align=right>527</td>
+<td align=right>100.00</td>
+<td align=right>527</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28739236</td>
+<td align=right>31</td>
+<td align=right>0</td>
+<td align=right>31</td>
+<td align=right>100.00</td>
+<td align=right>31</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/16/2026&nbsp;00:00:00&nbsp;-&nbsp;00:59:59</td>
+<td class=reptitle>DLNTSTSMTSPI118</td>
+<td class=reptitle>FORD_ADAS_FWC_DAT2.0</td>
+<td class=reptitle>28739235</td>
+<td align=right>429</td>
+<td align=right>0</td>
+<td align=right>429</td>
+<td align=right>100.00</td>
+<td align=right>429</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28739236</td>
+<td align=right>19</td>
+<td align=right>0</td>
+<td align=right>19</td>
+<td align=right>100.00</td>
+<td align=right>19</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/16/2026&nbsp;03:00:00&nbsp;-&nbsp;03:59:59</td>
+<td class=reptitle>DLNTSTSMTSPI125</td>
+<td class=reptitle>IFV600</td>
+<td class=reptitle>28839190</td>
+<td align=right>4</td>
+<td align=right>0</td>
+<td align=right>4</td>
+<td align=right>100.00</td>
+<td align=right>4</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28886327</td>
+<td align=right>4</td>
+<td align=right>0</td>
+<td align=right>4</td>
+<td align=right>100.00</td>
+<td align=right>4</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28890763</td>
+<td align=right>31</td>
+<td align=right>0</td>
+<td align=right>31</td>
+<td align=right>100.00</td>
+<td align=right>31</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/16/2026&nbsp;04:00:00&nbsp;-&nbsp;04:59:59</td>
+<td class=reptitle>DLNTSTSMTSPI125</td>
+<td class=reptitle>IFV600</td>
+<td class=reptitle>28839190</td>
+<td align=right>1</td>
+<td align=right>0</td>
+<td align=right>1</td>
+<td align=right>100.00</td>
+<td align=right>1</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28886327</td>
+<td align=right>10</td>
+<td align=right>0</td>
+<td align=right>10</td>
+<td align=right>100.00</td>
+<td align=right>10</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28890763</td>
+<td align=right>34</td>
+<td align=right>0</td>
+<td align=right>34</td>
+<td align=right>100.00</td>
+<td align=right>34</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/16/2026&nbsp;05:00:00&nbsp;-&nbsp;05:59:59</td>
+<td class=reptitle>DLNTSTSMTSPI125</td>
+<td class=reptitle>IFV600</td>
+<td class=reptitle>28839190</td>
+<td align=right>2</td>
+<td align=right>0</td>
+<td align=right>2</td>
+<td align=right>100.00</td>
+<td align=right>2</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28839191</td>
+<td align=right>14</td>
+<td align=right>0</td>
+<td align=right>14</td>
+<td align=right>100.00</td>
+<td align=right>14</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28886327</td>
+<td align=right>20</td>
+<td align=right>0</td>
+<td align=right>20</td>
+<td align=right>100.00</td>
+<td align=right>20</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28890763</td>
+<td align=right>269</td>
+<td align=right>0</td>
+<td align=right>269</td>
+<td align=right>100.00</td>
+<td align=right>269</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/16/2026&nbsp;06:00:00&nbsp;-&nbsp;05/16/26&nbsp;06:40:00</td>
+<td class=reptitle>DLNTSTSMTSPI125</td>
+<td class=reptitle>IFV600</td>
+<td class=reptitle>28839190</td>
+<td align=right>1</td>
+<td align=right>0</td>
+<td align=right>1</td>
+<td align=right>100.00</td>
+<td align=right>1</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28839191</td>
+<td align=right>6</td>
+<td align=right>0</td>
+<td align=right>6</td>
+<td align=right>100.00</td>
+<td align=right>6</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28886327</td>
+<td align=right>15</td>
+<td align=right>0</td>
+<td align=right>15</td>
+<td align=right>100.00</td>
+<td align=right>15</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>28890763</td>
+<td align=right>185</td>
+<td align=right>0</td>
+<td align=right>185</td>
+<td align=right>100.00</td>
+<td align=right>185</td>
+<td align=right>100.00</td>
+</tr>
+<tr></tr>
+<tr class=repdata>
+<td class=reptitle>UNDERFILLAOI</td>
+<td class=reptitle>05/15/2026&nbsp;23:00:00&nbsp;-&nbsp;23:59:59</td>
+<td class=reptitle>DLNTSTSMTAOIUF1</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28765748</td>
+<td align=right>525</td>
+<td align=right>0</td>
+<td align=right>525</td>
+<td align=right>100.00</td>
+<td align=right>525</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/16/2026&nbsp;00:00:00&nbsp;-&nbsp;00:59:59</td>
+<td class=reptitle>DLNTSTSMTAOIUF1</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28765748</td>
+<td align=right>54</td>
+<td align=right>0</td>
+<td align=right>54</td>
+<td align=right>100.00</td>
+<td align=right>54</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/16/2026&nbsp;01:00:00&nbsp;-&nbsp;01:59:59</td>
+<td class=reptitle>DLNTSTSMTAOIUF1</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28765748</td>
+<td align=right>251</td>
+<td align=right>0</td>
+<td align=right>251</td>
+<td align=right>100.00</td>
+<td align=right>251</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/16/2026&nbsp;02:00:00&nbsp;-&nbsp;02:59:59</td>
+<td class=reptitle>DLNTSTSMTAOIUF1</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28765748</td>
+<td align=right>582</td>
+<td align=right>0</td>
+<td align=right>582</td>
+<td align=right>100.00</td>
+<td align=right>582</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/16/2026&nbsp;03:00:00&nbsp;-&nbsp;03:59:59</td>
+<td class=reptitle>DLNTSTSMTAOIUF1</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28765748</td>
+<td align=right>311</td>
+<td align=right>0</td>
+<td align=right>311</td>
+<td align=right>100.00</td>
+<td align=right>311</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/16/2026&nbsp;04:00:00&nbsp;-&nbsp;04:59:59</td>
+<td class=reptitle>DLNTSTSMTAOIUF1</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28765748</td>
+<td align=right>404</td>
+<td align=right>0</td>
+<td align=right>404</td>
+<td align=right>100.00</td>
+<td align=right>404</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/16/2026&nbsp;05:00:00&nbsp;-&nbsp;05:59:59</td>
+<td class=reptitle>DLNTSTSMTAOIUF1</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28765748</td>
+<td align=right>443</td>
+<td align=right>0</td>
+<td align=right>443</td>
+<td align=right>100.00</td>
+<td align=right>443</td>
+<td align=right>100.00</td>
+</tr>
+<tr class=repdata>
+<td class=reptitle>&nbsp;</td>
+<td class=reptitle>05/16/2026&nbsp;06:00:00&nbsp;-&nbsp;05/16/26&nbsp;06:40:00</td>
+<td class=reptitle>DLNTSTSMTAOIUF1</td>
+<td class=reptitle>FCA_CAMERA</td>
+<td class=reptitle>28765748</td>
+<td align=right>221</td>
+<td align=right>0</td>
+<td align=right>221</td>
+<td align=right>100.00</td>
+<td align=right>221</td>
+<td align=right>100.00</td>
+</tr>
+</table>
+<p><button onclick="window.open('//reman61a.aptiv.com/standard/tmp/10_8_73_129_1779563180_fpyield.csv','')">Open Report in Excel</button></p>
+<pre>
+</pre>
+<form>
+<input type=reset value='OK' onclick='location.replace("/std_public/wipreports?mode=0");'>
+</form>
+<table width=100% border=0>
+<tr><td height=10> </td></tr>
+<tr> <td height=4 class='footerbar'>
+<img src='//reman61a.aptiv.com/standard/images/clear.gif' height='2' width='2' alt='clear.gif'></td></tr>
+<tr><td height=5> </td></tr>
+<tr><td align='center' class='xsmalltext'>
+<br>
+<a style='text-decoration: none; color: #0000AA' target='_parent' title='Click to go to the Official Aptiv E&S Mfg Eng MANTIS/FIS Website' href='http://fis.aptiv.com'><b>MANTIS</b></a> is an Aptiv Electronics & Safety Manufacturing Engineering Solution<br>Copyright © 2001 - 2026 All Rights Reserved.<br><i>(5.00.0000)</i>
+</td></tr>
+</table>
+</body>
+</html>

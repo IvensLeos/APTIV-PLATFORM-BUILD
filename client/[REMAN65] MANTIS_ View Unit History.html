@@ -1,0 +1,475 @@
+<!DOCTYPE html PUBLIC '-//W3C//DTD HTML 4.01 Transitional//EN'>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+<title>[REMAN65] MANTIS: View Unit History</title>
+<LINK REL='stylesheet' TYPE='text/css' HREF='https://reman65.aptiv.com/standard/styles/generic.css'>
+<script type='text/javascript'>
+function showWindonStatus( ) {
+var WindowStatus = 'MANTIS Version 5.00, Delphi Electronics and Safety Manufacturing Engineering, Copyright © 2001 - 2026, All Rights Reserved.';
+window.status=WindowStatus;
+}
+  var keyheld = 0
+  var maxkeys = 20
+  function keydown(event) {
+    var ignorKeys = [16, 17, 18, 20, 33, 34, 35, 36, 37, 38, 39, 40, 91, 93];
+    //alert(event.keyCode);
+    if(event.keyCode == 116) {
+      b = prompt("Refresh the page?",'');
+    	if(b == null) {
+        event.keyCode = 0;
+        event.returnValue = false;
+        return false;
+      }
+    }
+    if (contains(ignorKeys, event.keyCode) == false) {
+     	if (keyheld > maxkeys) {
+        do {
+          a = prompt('Possible STUCK KEY. Check keyboard, then click Cancel','' );
+    	  } while (a == '')
+        if (a != '') {
+          keyheld = 0
+        }
+       } else {
+    			   keyheld+=1
+       }
+     }
+  }
+  function keyup( ) {
+      keyheld = 0
+  }
+function contains(a, obj) {
+    for (var i = 0; i < a.length; i++) {
+        if (a[i] === obj) {
+            return true;
+        }
+    }
+    return false;
+}
+</script>
+<script type='text/javascript' src='https://reman65.aptiv.com/standard/jscripts/overlib.js'></script>
+<script type='text/javascript' src='https://reman65.aptiv.com/standard/jscripts/ajaxroutine.js'>
+
+    /***********************************************
+    * Basic Ajax Routine- Â© Dynamic Drive DHTML code library (www.dynamicdrive.com)
+    * Dynamic Ajax Content- Â© Dynamic Drive DHTML code library (www.dynamicdrive.com)
+    * This notice MUST stay intact for legal use
+    * Visit Dynamic Drive at http://www.dynamicdrive.com/ for full source code
+    ***********************************************/
+    </script>
+    
+<script type='text/javascript'>
+    var loginTimer;
+
+    function logout(redirect) {
+        let url = location.protocol + '//' + window.location.hostname;
+        const request = new XMLHttpRequest();
+        localStorage.removeItem('LoginUSER');
+
+        document.getElementById('logged-in').innerHTML = '';
+        document.getElementById('logged-in').style.visibility = 'collapse';
+
+        window.onload = null;
+        window.onmousemove = null;
+        window.onmousedown = null;
+        window.ontouchstart = null;
+        window.ontouchmove = null;
+        window.onclick = null;
+        window.onkeydown = null;
+        window.removeEventListener('scroll', resetTimer, true);
+
+        request.open('GET', url + '/std_auth/dummy_login', false, 'logout', '');
+        if (redirect) {
+            request.onreadystatechange = function () {
+                window.parent.location.href = url;
+            }
+        }
+        request.send();
+    }
+
+    function resetTimer() {
+        clearTimeout(loginTimer);
+
+        if (localStorage.getItem('LoginUSER') == null)
+        {
+            logout();
+        } else {
+            loginTimer = setTimeout(logout, localStorage.getItem('LoginTimeout'), false);
+        }
+    }
+
+    // '' must be replaced with value
+    // TCL: $userId and $userID
+    // PHP: none
+    if ('' != '') {
+        localStorage.setItem('LoginUSER', '');
+        // Do not remove the next comment line
+        localStorage.setItem('LoginTimeout', 300000);
+    }
+
+    loginUser = localStorage.getItem('LoginUSER');
+
+    document.addEventListener('DOMContentLoaded', function () {
+        const div = document.createElement('div');
+        div.className = 'floating-div';
+        div.id = 'logged-in';
+        document.body.appendChild(div);
+
+        if (loginUser != '' && loginUser != null) {
+            document.getElementById('logged-in').innerHTML = loginUser + "<button class='floating-button' onclick='logout(true)'>Logout</button>";
+            document.getElementById('logged-in').style.visibility = 'visible';
+        } else {
+            document.getElementById('logged-in').innerHTML = '';
+            document.getElementById('logged-in').style.visibility = 'collapse';
+        }
+    }, false);
+
+    if (localStorage.getItem('LoginUSER') != null) {
+        window.onload = resetTimer;
+        window.onmousemove = resetTimer;
+        window.onmousedown = resetTimer;
+        window.ontouchstart = resetTimer;
+        window.ontouchmove = resetTimer;
+        window.onclick = resetTimer;
+        window.onkeydown = resetTimer;
+        window.addEventListener('scroll', resetTimer, true);
+    }
+</script>
+
+
+</head>
+<body onLoad='showWindonStatus();' onkeydown='keydown(event);' onkeyup='keyup();'>
+<div id='overDiv' style='position:absolute; visibility:hidden; z-index:1000;'></div>
+<script src='/standard/jscripts/BrowserIgnoreCntlChars.js'></script>
+
+        <script type='text/javascript'>
+                var thisScript = '/std_public/unithistory';
+                function CheckBeforeSave() {
+                        with( document.main ) {
+                                if( unit.value == '' )
+                                {
+                                        alert( 'Please enter a unit first!' ) ;
+                                        unit.focus() ;
+                                        return false ;
+                                }
+
+                                unit.value = unit.value.toUpperCase() ;
+
+                                searchString = '?mode=0&unit='+encodeURIComponent(unit.value)+'&eMode=0';
+                                document.getElementById('contentArea').innerHTML = '<span class="good"><b>WORKING...</b></span>';
+                                ajaxpage(rootdomain+thisScript+searchString, 'contentArea');
+                                // blank out the unit form var after submit.
+                                unit.value = '';
+
+                                //don't submit, ajax will do the work.
+                                return false;
+                        }
+                        //don't submit.
+                        return false ;
+                }
+
+                function popUp(URL) {
+                        day = new Date();
+                        id = day.getTime();
+                        eval('page' + id + " = window.open(URL,id, 'toolbar=0,scrollbars=1,location=0,statusbar=0,menubar=0,resizable=1,width=400,height=400');");
+                }
+
+                function doSubmit(theCGI,theUnit) {
+                        with ( document.main ) {
+                                unit.value = theUnit
+                                action = theCGI
+                                submit()
+                        }
+                }
+        </script>
+        
+<form name=main action="/std_public/unithistory" method=post onsubmit='return CheckBeforeSave();'>
+<table border=0 cellspacing=1 cellpadding=4>
+<tr><td class=title colspan=2>
+<table border=0 cellspacing=0 cellpadding=1>
+<tr>
+<td class=titlenb width=100%><b>View Unit History</b><td>
+</tr>
+</table>
+</td></tr>
+<tr>
+<th align=right class=form>Enter/Scan Unit Barcode:</th>
+<td class=data><input type=text name=unit size=88 onkeypress='BrowserIgnoreCntlChars(event)' onKeyDown='return BrowserIgnoreCntlChars(event)'></td>
+</tr>
+<tr>
+<th align=right class=form>Show Issue ID's:</th>
+<td align=left class=data>
+<input type=checkbox name=showissues value=1 onclick='unit.focus()'>
+</td>
+</tr>
+</table>
+<input type=hidden name=mode value=1>
+</form>
+<br>
+<table border=0 cellspacing=1 cellpadding=4>
+<tr>
+<th align=left class=title nowrap>Unit</th>
+<th align=left class=title nowrap>Route Key</th>
+<th align=left class=title nowrap>Product Family</th>
+<th align=left class=title nowrap>Part Number</th>
+<th align=left class=title colspan=2 nowrap>Product Type</th>
+</tr>
+<tr valign=top>
+<td class=data><a href="javascript:doSubmit('/std_public/unithistory', '15326129013205')">15326129013205</a>
+<br><span class=smallblue>(Generation:&nbsp;0)</span>
+</td>
+<td class=data><A HREF="javascript:popUp('/std_public/showroute?part=NISSAN_SRR6_MB')">NISSAN_SRR6_MB</A><br><span class=smallblue>(NISSAN_SRR6_MB)</span></td>
+<td class=data>NISSAN_SRR6<br><span class=smallblue>(NISSAN_SRR6)</span></td>
+<td class=data>28796430<br><span class=smallblue>(28796430)</span></td>
+<td class=data colspan=2>ARRAY<br><span class=smallblue>(ARRAY)</span></td>
+</tr>
+<tr><td colspan=6><hr></td></tr>
+</table>
+<table border=0 cellspacing=1 cellpadding=4>
+<tr>
+<th class=title align=left colspan=2 nowrap>Next Process(es) in Route:</th>
+<td class=data colspan=4>Route Completed</td>
+</tr>
+<tr></tr>
+<tr>
+<th class=title align=left nowrap>Event</th>
+<th class=title align=left nowrap>Process</th>
+<th class=title align=left nowrap>Station</th>
+<th class=title align=left nowrap>Status</th>
+<th class=title align=left colspan=2 nowrap>Data</th>
+</tr>
+<tr>
+<td valign=top class=SCRAP rowspan=2>260511.113858</td>
+<td valign=top class=SCRAP rowspan=2>ROUTERMILLING</td>
+<td valign=top class=SCRAP rowspan=2>DLNPROFINRTR_11</td>
+<td valign=top class=SCRAP rowspan=2>SCRAP</td>
+<td class=SCRAP>GOOD</td>
+<td class=SCRAP>&nbsp;</td>
+</tr>
+</tr>
+<tr>
+<td class=SCRAP>SCRAP</td>
+<td class=SCRAP>Processed while Scrap</td>
+</tr>
+<tr>
+<td valign=top class=SCRAP rowspan=1>260510.025746</td>
+<td valign=top class=SCRAP rowspan=1>EDGEBONDAOI</td>
+<td valign=top class=SCRAP rowspan=1>DLNPROFINAOI03</td>
+<td valign=top class=SCRAP rowspan=1>SCRAP</td>
+<td class=SCRAP>SCRAP</td>
+<td class=SCRAP>Processed while Scrap</td>
+</tr>
+<tr>
+<td valign=top class=SCRAP rowspan=3>260510.025324</td>
+<td valign=top class=SCRAP rowspan=3>EDGEBONDDISPENSE</td>
+<td valign=top class=SCRAP rowspan=3>DLNPROFINEDB_03</td>
+<td valign=top class=SCRAP rowspan=3>SCRAP</td>
+<td class=SCRAP>LANE</td>
+<td class=SCRAP>2</td>
+</tr>
+</tr>
+<tr>
+<td class=SCRAP>ATTRIBUTES</td>
+<td class=SCRAP>MAP,111111</td>
+</tr>
+</tr>
+<tr>
+<td class=SCRAP>SCRAP</td>
+<td class=SCRAP>Processed while Scrap</td>
+</tr>
+<tr>
+<td valign=top class=SCRAP rowspan=3>260509.111134</td>
+<td valign=top class=SCRAP rowspan=3>ICT</td>
+<td valign=top class=SCRAP rowspan=3>DLNTSTSMTICT18</td>
+<td valign=top class=SCRAP rowspan=3>SCRAP</td>
+<td class=SCRAP>BAD</td>
+<td class=SCRAP>&nbsp;</td>
+</tr>
+</tr>
+<tr>
+<td class=SCRAP>ATTRIBUTES</td>
+<td class=SCRAP>MAP,111011</td>
+</tr>
+</tr>
+<tr>
+<td class=SCRAP>SCRAP</td>
+<td class=SCRAP>Processed while Scrap</td>
+</tr>
+<tr>
+<td valign=top class=SCRAP rowspan=2>260509.100716</td>
+<td valign=top class=SCRAP rowspan=2>XRAY</td>
+<td valign=top class=SCRAP rowspan=2>DLNTSTSMTXRAY24</td>
+<td valign=top class=SCRAP rowspan=2>SCRAP</td>
+<td class=SCRAP>SOFTWARE</td>
+<td class=SCRAP>XRAY28796430</td>
+</tr>
+</tr>
+<tr>
+<td class=SCRAP>SCRAP</td>
+<td class=SCRAP>Processed while Scrap</td>
+</tr>
+<tr>
+<td valign=top class=SCRAP rowspan=4>260509.090215</td>
+<td valign=top class=SCRAP rowspan=4>ADMIN</td>
+<td valign=top class=SCRAP rowspan=4>WEB</td>
+<td valign=top class=SCRAP rowspan=4>SCRAP</td>
+<td class=SCRAP>WEBEVENT</td>
+<td class=SCRAP>&nbsp;</td>
+</tr>
+</tr>
+<tr>
+<td class=SCRAP>SCRAP</td>
+<td class=SCRAP>Other</td>
+</tr>
+</tr>
+<tr>
+<td class=SCRAP>COMMENT</td>
+<td class=SCRAP>Q201 AUSENTE</td>
+</tr>
+</tr>
+<tr>
+<td class=SCRAP>OPERATOR</td>
+<td class=SCRAP>&nbsp;</td>
+</tr>
+<tr>
+<td valign=top class=REWORK rowspan=6>260509.090152</td>
+<td valign=top class=REWORK rowspan=6>AOI_DIAG_S1</td>
+<td valign=top class=REWORK rowspan=6>DLNTSTSMTDIA129</td>
+<td valign=top class=REWORK rowspan=6>REWORK</td>
+<td class=REWORK>BAD</td>
+<td class=REWORK>&nbsp;</td>
+</tr>
+</tr>
+<tr>
+<td class=REWORK>MAP</td>
+<td class=REWORK>111011</td>
+</tr>
+</tr>
+<tr>
+<td class=REWORK>MAP_BAD_BOARDS</td>
+<td class=REWORK>4</td>
+</tr>
+</tr>
+<tr>
+<td class=REWORK>ATTRIBUTES</td>
+<td class=REWORK>MAP,111011</td>
+</tr>
+</tr>
+<tr>
+<td class=REWORK>SOFTWARE</td>
+<td class=REWORK>KY28796430_S1_REVC</td>
+</tr>
+</tr>
+<tr>
+<td class=REWORK>REVIEWED_DEFECT</td>
+<td class=REWORK>MISSING,Q201-0,MISSING,16243063,REAL</td>
+</tr>
+<tr>
+<td valign=top class=REWORK rowspan=6>260509.085550</td>
+<td valign=top class=REWORK rowspan=6>AOI_S1</td>
+<td valign=top class=REWORK rowspan=6>DLNTSTSMTAOIA29</td>
+<td valign=top class=REWORK rowspan=6>REWORK</td>
+<td class=REWORK>BAD</td>
+<td class=REWORK>&nbsp;</td>
+</tr>
+</tr>
+<tr>
+<td class=REWORK>MAP</td>
+<td class=REWORK>111011</td>
+</tr>
+</tr>
+<tr>
+<td class=REWORK>MAP_BAD_BOARDS</td>
+<td class=REWORK>4</td>
+</tr>
+</tr>
+<tr>
+<td class=REWORK>SOFTWARE</td>
+<td class=REWORK>KY28796430_S1_REVC</td>
+</tr>
+</tr>
+<tr>
+<td class=REWORK>SMT_PART</td>
+<td class=REWORK>28796430</td>
+</tr>
+</tr>
+<tr>
+<td class=REWORK>DEFECT</td>
+<td class=REWORK>COMP,Q201-0,MISSING,</td>
+</tr>
+<tr>
+<td valign=top class=PASS rowspan=4>260509.075251</td>
+<td valign=top class=PASS rowspan=4>SPI_S1</td>
+<td valign=top class=PASS rowspan=4>DLNTSTSMTSPI129</td>
+<td valign=top class=PASS rowspan=4>PASS</td>
+<td class=PASS>MODEL</td>
+<td class=PASS>28796430</td>
+</tr>
+</tr>
+<tr>
+<td class=PASS>ATTRIBUTES</td>
+<td class=PASS>MAP,111111</td>
+</tr>
+</tr>
+<tr>
+<td class=PASS>REVISION</td>
+<td class=PASS>C</td>
+</tr>
+</tr>
+<tr>
+<td class=PASS>SOFTWARE</td>
+<td class=PASS>K129T96430C</td>
+</tr>
+<tr>
+<td valign=top class=PASS rowspan=8>260509.032519</td>
+<td valign=top class=PASS rowspan=8>BOARD_LABEL</td>
+<td valign=top class=PASS rowspan=8>PCBLASER_05</td>
+<td valign=top class=PASS rowspan=8>PASS</td>
+<td class=PASS>BOARD_LOTCODE</td>
+<td class=PASS>28796419QEZGGA0005225245</td>
+</tr>
+</tr>
+<tr>
+<td class=PASS>ATTRIBUTES</td>
+<td class=PASS>MAP,111111</td>
+</tr>
+</tr>
+<tr>
+<td class=PASS>ATTRIBUTES</td>
+<td class=PASS>ARRAY,1, 15326129013202, PASS</td>
+</tr>
+</tr>
+<tr>
+<td class=PASS>ATTRIBUTES</td>
+<td class=PASS>ARRAY,2, 15326129013203, PASS</td>
+</tr>
+</tr>
+<tr>
+<td class=PASS>ATTRIBUTES</td>
+<td class=PASS>ARRAY,3, 15326129013204, PASS</td>
+</tr>
+</tr>
+<tr>
+<td class=PASS>ATTRIBUTES</td>
+<td class=PASS>ARRAY,4, 15326129013205, PASS</td>
+</tr>
+</tr>
+<tr>
+<td class=PASS>ATTRIBUTES</td>
+<td class=PASS>ARRAY,5, 15326129013206, PASS</td>
+</tr>
+</tr>
+<tr>
+<td class=PASS>ATTRIBUTES</td>
+<td class=PASS>ARRAY,6, 15326129013207, PASS</td>
+</tr>
+<tr>
+<td valign=top class=PASS rowspan=1>260509.032518</td>
+<td valign=top class=PASS rowspan=1>AUTOCREATE</td>
+<td valign=top class=PASS rowspan=1>EI</td>
+<td valign=top class=PASS rowspan=1>PASS</td>
+<td class=PASS></td>
+<td class=PASS>&nbsp;</td>
+</tr>
+</table>
+ <script type='text/javascript'>document.main.unit.focus();</script> 
