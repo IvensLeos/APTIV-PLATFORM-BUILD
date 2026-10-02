@@ -22,7 +22,7 @@ module.exports = {
         ORIGIN: 'http://dlhs372n3.aptiv.com',
 
         // Conexión a MongoDB. Se aplica al arrancar, no queda congelada en el build.
-        MONGODB_URI: "mongodb://root:root1100@localhost:27017",
+        MONGODB_URI: "mongodb://root:root1100@localhost:27017/?authSource=admin",
         MONGODB_DB: "APTIV_PLATFORM",
 
         // adapter-node rechaza el cuerpo en 512 KB. El dump de OEES pesa varios MB.
