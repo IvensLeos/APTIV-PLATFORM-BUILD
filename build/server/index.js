@@ -1,28 +1,8 @@
-import { c as coalesce_to_error, g as get_status, a as get_message, w as with_request_store, t as text_decoder, p as parse, o as options, b as get_hooks, n as noop, h as has_resolution_suffix, d as has_data_suffix, s as strip_resolution_suffix, e as strip_data_suffix, T as TRAILING_SLASH_PARAM, I as INVALIDATED_PARAM, f as decode_pathname, i as add_data_suffix, j as add_resolution_suffix, k as find_route, l as normalize_path, m as disable_search, v as validate_layout_server_exports, q as validate_layout_exports, r as validate_page_server_exports, u as validate_page_exports, x as noop_span, y as create_remote_key, z as hash, A as text_encoder, B as compact, C as once, D as normalize_error, E as resolve, F as parse_remote_arg, G as stringify, H as make_trackable, J as stringify$1, K as read_implementation, L as split_remote_key, M as get_relative_path, N as base64_encode, O as set_read_implementation } from './chunks/internal-Be0pHNSw.js';
+import { c as coalesce_to_error, g as get_status, a as get_message, w as with_request_store, t as text_decoder, p as parse, o as options, b as get_hooks, n as noop, h as has_resolution_suffix, d as has_data_suffix, e as base, s as strip_resolution_suffix, f as strip_data_suffix, T as TRAILING_SLASH_PARAM, I as INVALIDATED_PARAM, i as decode_pathname, j as add_data_suffix, k as add_resolution_suffix, l as find_route, m as normalize_path, q as disable_search, v as validate_layout_server_exports, r as validate_layout_exports, u as validate_page_server_exports, x as validate_page_exports, y as noop_span, z as assets, A as app_dir, B as create_remote_key, C as hash, D as text_encoder, E as compact, F as once, G as normalize_error, H as resolve, J as parse_remote_arg, K as stringify, L as make_trackable, M as stringify$1, N as read_implementation, O as split_remote_key, P as get_relative_path, Q as base64_encode, R as override, S as reset, U as set_read_implementation } from './chunks/internal-CRSdnj6l.js';
 import { j as json, t as text, e as error, i as isRedirect } from './chunks/index-CRFfcpCQ.js';
 import { H as HttpError, S as SvelteKitError, R as Redirect, A as ActionFailure } from './chunks/index-DBqjc0Yf.js';
 import { s as set_private_env, a as set_public_env, p as public_env } from './chunks/shared-server-9-2j12mp.js';
-import { u as uneval, w as writable, r as readable } from './chunks/dev-BeZd-_YJ.js';
-
-//#region node_modules/@sveltejs/kit/src/runtime/app/paths/internal/server.js
-var base = "";
-var assets = base;
-var app_dir = "_app";
-var initial = {
-	base,
-	assets
-};
-/**
-* @param {{ base: string, assets: string }} paths
-*/
-function override(paths) {
-	base = paths.base;
-	assets = paths.assets;
-}
-function reset() {
-	base = initial.base;
-	assets = initial.assets;
-}
+import { u as uneval, w as writable, r as readable } from './chunks/dev-CSPWYH9f.js';
 
 /**
  * @template {{ tracing: { enabled: boolean, root: import('@opentelemetry/api').Span, current: import('@opentelemetry/api').Span } }} T
