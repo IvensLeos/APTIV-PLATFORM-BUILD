@@ -1,0 +1,2586 @@
+[{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57a1"
+  },
+  "FAILURECODE": "FA-0001 ADHESIVO AGOTADO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57a2"
+  },
+  "FAILURECODE": "FA-0002 ADHESIVO EXPIRADO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57a3"
+  },
+  "FAILURECODE": "FA-0003 AIRE COMPRIMIDO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57a4"
+  },
+  "FAILURECODE": "FA-0004 AJUSTE DE COMPONENTE DE ENTRADA EN DATAIO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57a5"
+  },
+  "FAILURECODE": "FA-0005 AJUSTE DE COMPONENTE DE SALIDA EN DATAIO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57a6"
+  },
+  "FAILURECODE": "FA-0006 AJUSTE DE COMPONENTES EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57a7"
+  },
+  "FAILURECODE": "FA-0007 AJUSTE DE COORDENADAS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57a8"
+  },
+  "FAILURECODE": "FA-0008 AJUSTE DE COORDENADAS EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57a9"
+  },
+  "FAILURECODE": "FA-0009 ARRANQUE DE LINEA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57aa"
+  },
+  "FAILURECODE": "FA-0010 AUSENTISMO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57ab"
+  },
+  "FAILURECODE": "FA-0011 BAJA PRESION DE AIRE EN FACILIDADES"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57ac"
+  },
+  "FAILURECODE": "FA-0012 BANDA DAÑADA EN AOI"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57ad"
+  },
+  "FAILURECODE": "FA-0013 BANDA DAÑADA EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57ae"
+  },
+  "FAILURECODE": "FA-0014 BANDA DAÑADA EN SPI"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57af"
+  },
+  "FAILURECODE": "FA-0015 BOMBA INHABILITADA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57b0"
+  },
+  "FAILURECODE": "FA-0016 BORRADO DE MEMORIA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57b1"
+  },
+  "FAILURECODE": "FA-0017 BROCA DAÑADA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57b2"
+  },
+  "FAILURECODE": "FA-0018 BROCA DESGASTADA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57b3"
+  },
+  "FAILURECODE": "FA-0019 BUFFER LLENO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57b4"
+  },
+  "FAILURECODE": "FA-0020 BUFFER VACIO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57b5"
+  },
+  "FAILURECODE": "FA-0021 BURBUJA DE AIRE EN ADHESIVO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57b6"
+  },
+  "FAILURECODE": "FA-0022 CALIBRACION"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57b7"
+  },
+  "FAILURECODE": "FA-0023 CALIBRACION DE ALTURA DE PIPETAS EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57b8"
+  },
+  "FAILURECODE": "FA-0024 CALIBRACION DE EPOXY EN UNDERFILL"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57b9"
+  },
+  "FAILURECODE": "FA-0025 CAMBIO DE CHAROLA DE CONECTOR EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57ba"
+  },
+  "FAILURECODE": "FA-0026 CAMBIO DE CINTA EN DATAIO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57bb"
+  },
+  "FAILURECODE": "FA-0027 CAMBIO DE EPOXY"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57bc"
+  },
+  "FAILURECODE": "FA-0028 CAMBIO DE MODELO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57bd"
+  },
+  "FAILURECODE": "FA-0029 CAMBIO DE MODELO TIPO 1"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57be"
+  },
+  "FAILURECODE": "FA-0030 CAMBIO DE MODELO TIPO 2"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57bf"
+  },
+  "FAILURECODE": "FA-0031 CAMBIO DE MODELO TIPO 3"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57c0"
+  },
+  "FAILURECODE": "FA-0032 CAMBIO DE MODELO TIPO 4"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57c1"
+  },
+  "FAILURECODE": "FA-0033 CAMBIO DE MODELO TIPO 5"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57c2"
+  },
+  "FAILURECODE": "FA-0034 CAMBIO DE MODELO TIPO 6"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57c3"
+  },
+  "FAILURECODE": "FA-0035 CAMBIO DE PASTA EN DEK"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57c4"
+  },
+  "FAILURECODE": "FA-0036 CAMBIO DE ROLLO PROGRAMADO EN DATAIO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57c5"
+  },
+  "FAILURECODE": "FA-0037 CAMBIO DE ROLLO VIRGEN EN DATAIO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57c6"
+  },
+  "FAILURECODE": "FA-0038 CAMBIO DE WIPPER EN DEK"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57c7"
+  },
+  "FAILURECODE": "FA-0039 CAPARAZONES SUCIOS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57c8"
+  },
+  "FAILURECODE": "FA-0040 CARRO DAÑADO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57c9"
+  },
+  "FAILURECODE": "FA-0041 CARROS LLENOS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57ca"
+  },
+  "FAILURECODE": "FA-0042 CARTUCHO DE ADHESIVO DAÑADO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57cb"
+  },
+  "FAILURECODE": "FA-0043 CHAROLA ATORADA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57cc"
+  },
+  "FAILURECODE": "FA-0044 CHAROLA DAÑADA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57cd"
+  },
+  "FAILURECODE": "FA-0045 CHAROLA DE RECHAZOS LLENA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57ce"
+  },
+  "FAILURECODE": "FA-0046 CHAROLA NO LLEGA A POSICION"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57cf"
+  },
+  "FAILURECODE": "FA-0047 COLISION DE NIDO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57d0"
+  },
+  "FAILURECODE": "FA-0048 COLISION DE PALLET"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57d1"
+  },
+  "FAILURECODE": "FA-0049 COLISION DE ROBOT"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57d2"
+  },
+  "FAILURECODE": "FA-0050 COMPONENTES AUSENTES"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57d3"
+  },
+  "FAILURECODE": "FA-0051 COMPONENTES LEVANTADOS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57d4"
+  },
+  "FAILURECODE": "FA-0052 COMPONENTES MOVIDOS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57d5"
+  },
+  "FAILURECODE": "FA-0053 COORDENADAS MOVIDAS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57d6"
+  },
+  "FAILURECODE": "FA-0054 CORRIENDO SOLO CON UN EQUIPO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57d7"
+  },
+  "FAILURECODE": "FA-0055 CORTO A TIERRA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57d8"
+  },
+  "FAILURECODE": "FA-0056 CORTO DE MATERIAL DE SPMKT"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57d9"
+  },
+  "FAILURECODE": "FA-0057 CORTO DE MATERIAL EXTERNO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57da"
+  },
+  "FAILURECODE": "FA-0058 DAÑO EN AGUJA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57db"
+  },
+  "FAILURECODE": "FA-0059 DEBUGEO EN SPI"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57dc"
+  },
+  "FAILURECODE": "FA-0060 DISCO DURO LLENO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57dd"
+  },
+  "FAILURECODE": "FA-0061 DISCREPANCIAS EN FVS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57de"
+  },
+  "FAILURECODE": "FA-0062 DISPARO DE ALARMA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57df"
+  },
+  "FAILURECODE": "FA-0063 ELEVADOR NO LLEGA A POSICION"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57e0"
+  },
+  "FAILURECODE": "FA-0064 EQUIPO CICLADO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57e1"
+  },
+  "FAILURECODE": "FA-0065 EQUIPO LENTO EN DATAIO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57e2"
+  },
+  "FAILURECODE": "FA-0066 ERROR DEL PROGRAMA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57e3"
+  },
+  "FAILURECODE": "FA-0067 EXCESO DE EPOXY EN UNDERFILL"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57e4"
+  },
+  "FAILURECODE": "FA-0068 FALLA CONFIGURACION DE PIPETAS EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57e5"
+  },
+  "FAILURECODE": "FA-0069 FALLA DE COLISION"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57e6"
+  },
+  "FAILURECODE": "FA-0070 FALLA DE COMUNICACION EN FIS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57e7"
+  },
+  "FAILURECODE": "FA-0071 FALLA DE CONEXION CON LA RED EN FIS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57e8"
+  },
+  "FAILURECODE": "FA-0072 FALLA DE CONEXION EN AOI"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57e9"
+  },
+  "FAILURECODE": "FA-0073 FALLA DE CONEXION EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57ea"
+  },
+  "FAILURECODE": "FA-0074 FALLA DE CONEXION EN SPI"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57eb"
+  },
+  "FAILURECODE": "FA-0075 FALLA DE CONVEYORS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57ec"
+  },
+  "FAILURECODE": "FA-0076 FALLA DE ELEVADOR"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57ed"
+  },
+  "FAILURECODE": "FA-0077 FALLA DE EQUIPO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57ee"
+  },
+  "FAILURECODE": "FA-0078 FALLA DE ESCANER"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57ef"
+  },
+  "FAILURECODE": "FA-0079 FALLA DE ESCANER EN FIS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57f0"
+  },
+  "FAILURECODE": "FA-0080 FALLA DE ESCANER SMT EN AOI"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57f1"
+  },
+  "FAILURECODE": "FA-0081 FALLA DE ESCANER SMT EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57f2"
+  },
+  "FAILURECODE": "FA-0082 FALLA DE ESCANER SMT EN SPI"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57f3"
+  },
+  "FAILURECODE": "FA-0083 FALLA DE FEEDER EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57f4"
+  },
+  "FAILURECODE": "FA-0084 FALLA DE FIXTURE"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57f5"
+  },
+  "FAILURECODE": "FA-0085 FALLA DE GANTRY EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57f6"
+  },
+  "FAILURECODE": "FA-0086 FALLA DE GRIPPER"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57f7"
+  },
+  "FAILURECODE": "FA-0087 FALLA DE HORNO DE CURADO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57f8"
+  },
+  "FAILURECODE": "FA-0088 FALLA DE INDEXADO DE PALLET"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57f9"
+  },
+  "FAILURECODE": "FA-0089 FALLA DE LASER"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57fa"
+  },
+  "FAILURECODE": "FA-0090 FALLA DE LEVANTAMIENTO EN DATAIO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57fb"
+  },
+  "FAILURECODE": "FA-0091 FALLA DE LEVANTAMIENTO EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57fc"
+  },
+  "FAILURECODE": "FA-0092 FALLA DE MOTOR"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57fd"
+  },
+  "FAILURECODE": "FA-0093 FALLA DE PIN PRESS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57fe"
+  },
+  "FAILURECODE": "FA-0094 FALLA DE PROGRAMACION"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf57ff"
+  },
+  "FAILURECODE": "FA-0095 FALLA DE PROGRAMACION EN DATAIO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5800"
+  },
+  "FAILURECODE": "FA-0096 FALLA DE RED EN AOI"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5801"
+  },
+  "FAILURECODE": "FA-0097 FALLA DE RED EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5802"
+  },
+  "FAILURECODE": "FA-0098 FALLA DE RED EN SPI"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5803"
+  },
+  "FAILURECODE": "FA-0099 FALLA DE ROBOT"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5804"
+  },
+  "FAILURECODE": "FA-0100 FALLA DE SEGMENTOS EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5805"
+  },
+  "FAILURECODE": "FA-0101 FALLA DE SOCKET EN DATAIO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5806"
+  },
+  "FAILURECODE": "FA-0102 FALLA DE TRASPORTE EN AOI"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5807"
+  },
+  "FAILURECODE": "FA-0103 FALLA DE TRASPORTE EN CARGADOR AUTOMATICO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5808"
+  },
+  "FAILURECODE": "FA-0104 FALLA DE TRASPORTE EN CONVEYOR"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5809"
+  },
+  "FAILURECODE": "FA-0105 FALLA DE TRASPORTE EN DESCARGADOR AUTOMATICO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf580a"
+  },
+  "FAILURECODE": "FA-0106 FALLA DE TRASPORTE EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf580b"
+  },
+  "FAILURECODE": "FA-0107 FALLA DE TRASPORTE EN SPI"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf580c"
+  },
+  "FAILURECODE": "FA-0108 FALLA DE VACIO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf580d"
+  },
+  "FAILURECODE": "FA-0109 FALLA DE VACIO EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf580e"
+  },
+  "FAILURECODE": "FA-0110 FALLA DE VISION"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf580f"
+  },
+  "FAILURECODE": "FA-0111 FALLA DE VISION EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5810"
+  },
+  "FAILURECODE": "FA-0112 FALLA DE WIPPER EN DEK"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5811"
+  },
+  "FAILURECODE": "FA-0113 FALLA EN COLOCACION DE PCB"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5812"
+  },
+  "FAILURECODE": "FA-0114 FALLA EN LECTURA DE ETIQUETA EN AOI"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5813"
+  },
+  "FAILURECODE": "FA-0115 FALLA EN LECTURA DE ETIQUETA EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5814"
+  },
+  "FAILURECODE": "FA-0116 FALLA EN LECTURA DE ETIQUETA EN SPI"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5815"
+  },
+  "FAILURECODE": "FA-0117 FALLA EN PROGRAMA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5816"
+  },
+  "FAILURECODE": "FA-0118 FALLA MAQUINA CORTADORA EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5817"
+  },
+  "FAILURECODE": "FA-0119 FALLA UPS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5818"
+  },
+  "FAILURECODE": "FA-0120 FALLAS DE ELEVACION"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5819"
+  },
+  "FAILURECODE": "FA-0121 FALLAS DE FIDUCIALES EN AOI"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf581a"
+  },
+  "FAILURECODE": "FA-0122 FALLAS DE FIDUCIALES EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf581b"
+  },
+  "FAILURECODE": "FA-0123 FALLAS DE FIDUCIALES EN SPI"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf581c"
+  },
+  "FAILURECODE": "FA-0124 FALLAS DE FIS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf581d"
+  },
+  "FAILURECODE": "FA-0125 FALLAS DE TRANSPORTE"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf581e"
+  },
+  "FAILURECODE": "FA-0126 FALLAS DE VERIFICACION DE MEMORIA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf581f"
+  },
+  "FAILURECODE": "FA-0127 FALSOS RECHAZOS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5820"
+  },
+  "FAILURECODE": "FA-0128 FALSOS RECHAZOS EN AOI"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5821"
+  },
+  "FAILURECODE": "FA-0129 FALSOS RECHAZOS EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5822"
+  },
+  "FAILURECODE": "FA-0130 FALSOS RECHAZOS EN SPI"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5823"
+  },
+  "FAILURECODE": "FA-0131 FALTA CAPACIDAD EN LASSER"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5824"
+  },
+  "FAILURECODE": "FA-0132 FALTA CARRITO DE EMPATE"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5825"
+  },
+  "FAILURECODE": "FA-0133 FALTA DE CANISTER"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5826"
+  },
+  "FAILURECODE": "FA-0134 FALTA DE CHAROLAS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5827"
+  },
+  "FAILURECODE": "FA-0135 FALTA DE HEATSINK DISPENSADO (TIM DISPENSER CAIDA)"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5828"
+  },
+  "FAILURECODE": "FA-0136 FALTA DE MANIFIESTOS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5829"
+  },
+  "FAILURECODE": "FA-0137 FALTA DE MATERIAL DESDE ANTENNA ATTACH"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf582a"
+  },
+  "FAILURECODE": "FA-0138 FALTA DE MATERIAL DESDE SMT"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf582b"
+  },
+  "FAILURECODE": "FA-0139 FALTA DE MATERIAL INTERNO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf582c"
+  },
+  "FAILURECODE": "FA-0140 FALTA DE MATERIAL LASSER"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf582d"
+  },
+  "FAILURECODE": "FA-0141 FALTA DE MATERIAL PRIMER LADO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf582e"
+  },
+  "FAILURECODE": "FA-0142 FALTA DE MATERIAL PROCESO PREVIO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf582f"
+  },
+  "FAILURECODE": "FA-0143 FALTA DE MATERIAL PROVEEDOR"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5830"
+  },
+  "FAILURECODE": "FA-0144 FALTA DE MATERIAL ROLLOS CON ETIQUETA C9023"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5831"
+  },
+  "FAILURECODE": "FA-0145 FALTA DE PERSONAL EN DATAIO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5832"
+  },
+  "FAILURECODE": "FA-0146 FALTA DE PIPETAS EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5833"
+  },
+  "FAILURECODE": "FA-0147 FALTA DE PRESENTACION DE PARTES"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5834"
+  },
+  "FAILURECODE": "FA-0148 FALTA DE SCANNER EN FVS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5835"
+  },
+  "FAILURECODE": "FA-0149 FALTA DE SOPORTE AOI"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5836"
+  },
+  "FAILURECODE": "FA-0150 FALTA DE SOPORTE PROCESOS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5837"
+  },
+  "FAILURECODE": "FA-0151 FALTA DE SOPORTE SPI"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5838"
+  },
+  "FAILURECODE": "FA-0152 FALTA DE SOPORTE TECNICO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5839"
+  },
+  "FAILURECODE": "FA-0153 FALTA HERRAMIENTA EPP"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf583a"
+  },
+  "FAILURECODE": "FA-0154 FALTA TECNICO EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf583b"
+  },
+  "FAILURECODE": "FA-0155 FINGERS DEJA MAL COLOCADA CHAROLA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf583c"
+  },
+  "FAILURECODE": "FA-0156 FINGERS NO LEVANTA CORRECTAMENTE CHAROLA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf583d"
+  },
+  "FAILURECODE": "FA-0157 FINGERS NO SUELTAN CHAROLA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf583e"
+  },
+  "FAILURECODE": "FA-0158 FUGA DE AIRE"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf583f"
+  },
+  "FAILURECODE": "FA-0159 GRIPPER DAÑADO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5840"
+  },
+  "FAILURECODE": "FA-0160 GRIPPER DESALINEADO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5841"
+  },
+  "FAILURECODE": "FA-0161 INCIDENTE DE SEGURIDAD"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5842"
+  },
+  "FAILURECODE": "FA-0162 INSUFICIENCIA DE EPOXY EN UNDERFILL"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5843"
+  },
+  "FAILURECODE": "FA-0163 MAL AGARRE DE GRIPPER"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5844"
+  },
+  "FAILURECODE": "FA-0164 MAL MANEJO DE MATERIAL"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5845"
+  },
+  "FAILURECODE": "FA-0165 MAL MANEJO DE PCB"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5846"
+  },
+  "FAILURECODE": "FA-0166 MAL PRENSADA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5847"
+  },
+  "FAILURECODE": "FA-0167 MALA COLOCACION DE ANTENA POR ROBOT"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5848"
+  },
+  "FAILURECODE": "FA-0168 MALA COLOCACION DE CHAROLA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5849"
+  },
+  "FAILURECODE": "FA-0169 MALA COLOCACION DE PIEZA EN NIDO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf584a"
+  },
+  "FAILURECODE": "FA-0170 MALA COLOCACION DE PIEZA POR ROBOT"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf584b"
+  },
+  "FAILURECODE": "FA-0171 MALA COLOCACION DE PIEZA SOBRE CHAROLA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf584c"
+  },
+  "FAILURECODE": "FA-0172 MALA COLOCACION DE TABLILLA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf584d"
+  },
+  "FAILURECODE": "FA-0173 MALA COLOCACION POR GRIPPER"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf584e"
+  },
+  "FAILURECODE": "FA-0174 MALA EJECUCION"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf584f"
+  },
+  "FAILURECODE": "FA-0175 MALA EJECUCION DE REPROCESO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5850"
+  },
+  "FAILURECODE": "FA-0176 MALA PROGRAMACION PC&L"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5851"
+  },
+  "FAILURECODE": "FA-0177 MANIFIESTOS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5852"
+  },
+  "FAILURECODE": "FA-0178 MAQUINA INHIBIDA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5853"
+  },
+  "FAILURECODE": "FA-0179 MATERIAL ARCHIVADO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5854"
+  },
+  "FAILURECODE": "FA-0180 MATERIAL CAIDO DENTRO DE EQUIPO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5855"
+  },
+  "FAILURECODE": "FA-0181 MATERIAL DE REPROCESO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5856"
+  },
+  "FAILURECODE": "FA-0182 MATERIAL LINEA ATRASADA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5857"
+  },
+  "FAILURECODE": "FA-0183 MATERIAL NO PROGRAMADO EN LINEA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5858"
+  },
+  "FAILURECODE": "FA-0184 MATERIAL POR ARRANQUE DE LINEAS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5859"
+  },
+  "FAILURECODE": "FA-0185 MATERIAL POR FALLA EQUIPO PTH"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf585a"
+  },
+  "FAILURECODE": "FA-0186 MATERIAL POR FALLA EQUIPO RAYOS X"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf585b"
+  },
+  "FAILURECODE": "FA-0187 MOTOR DAÑADO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf585c"
+  },
+  "FAILURECODE": "FA-0188 NAVAJAS AUSENTES EN DEK"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf585d"
+  },
+  "FAILURECODE": "FA-0189 NAVAJAS DAÑADAS EN DEK"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf585e"
+  },
+  "FAILURECODE": "FA-0190 NC'S NO ACTUALIZADOS EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf585f"
+  },
+  "FAILURECODE": "FA-0191 NO HAY PARTES EN ALMACEN"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5860"
+  },
+  "FAILURECODE": "FA-0192 NO HAY PROGRAMACION EN DATAIO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5861"
+  },
+  "FAILURECODE": "FA-0193 NO LEVANTA HOUSING"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5862"
+  },
+  "FAILURECODE": "FA-0194 NO SE CARGA MATERIAL"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5863"
+  },
+  "FAILURECODE": "FA-0195 PALLET INCORRECTO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5864"
+  },
+  "FAILURECODE": "FA-0196 PALLET MAL COLOCADO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5865"
+  },
+  "FAILURECODE": "FA-0197 PALLETS ATORADOS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5866"
+  },
+  "FAILURECODE": "FA-0198 PASANDO PARCIALES"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5867"
+  },
+  "FAILURECODE": "FA-0199 PCB MAL COLOCADA EN PALLET POR ROUTER"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5868"
+  },
+  "FAILURECODE": "FA-0200 PICK UP MOVIDO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5869"
+  },
+  "FAILURECODE": "FA-0201 PIEZA CAIDA AL PISO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf586a"
+  },
+  "FAILURECODE": "FA-0202 PIEZA CAIDA DENTRO DE MAQUINA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf586b"
+  },
+  "FAILURECODE": "FA-0203 PIEZAS EMPALMADAS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf586c"
+  },
+  "FAILURECODE": "FA-0204 PINES DOBLADOS POR ATRASO DE FINAL"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf586d"
+  },
+  "FAILURECODE": "FA-0205 PROBLEMA CON EL PROGRAMA EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf586e"
+  },
+  "FAILURECODE": "FA-0206 PROBLEMA CON EPOXY EN UNDERFILL"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf586f"
+  },
+  "FAILURECODE": "FA-0207 PROBLEMA CON SCANNER IX EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5870"
+  },
+  "FAILURECODE": "FA-0208 PROBLEMA CON SCANNER T2 EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5871"
+  },
+  "FAILURECODE": "FA-0209 PROBLEMA CON SCANNER T4 EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5872"
+  },
+  "FAILURECODE": "FA-0210 PROBLEMA CON VAINAS EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5873"
+  },
+  "FAILURECODE": "FA-0211 PROBLEMA DE CALIDAD EN EL PROCESO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5874"
+  },
+  "FAILURECODE": "FA-0212 PROBLEMA DE NITROGENO EN FACILIDADES"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5875"
+  },
+  "FAILURECODE": "FA-0213 PROBLEMA DE VOLTAJE EN FACILIDADES"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5876"
+  },
+  "FAILURECODE": "FA-0214 PROBLEMAS CON PASTA EN DEK"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5877"
+  },
+  "FAILURECODE": "FA-0215 PROBLEMAS DE CALIDAD"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5878"
+  },
+  "FAILURECODE": "FA-0216 PROBLEMAS DE RED"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5879"
+  },
+  "FAILURECODE": "FA-0217 PROBLEMAS MAQUINA ESSEGI"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf587a"
+  },
+  "FAILURECODE": "FA-0218 PROCESO LENTO PVA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf587b"
+  },
+  "FAILURECODE": "FA-0219 PSA MAL COLOCADO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf587c"
+  },
+  "FAILURECODE": "FA-0220 RATE ELEVADO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf587d"
+  },
+  "FAILURECODE": "FA-0221 RECONOCIMIENTO DE FEEDER"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf587e"
+  },
+  "FAILURECODE": "FA-0222 REEMPLAZO DE FEEDER"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf587f"
+  },
+  "FAILURECODE": "FA-0223 REINICIO DE PROGRAMA EN DATAIO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5880"
+  },
+  "FAILURECODE": "FA-0224 RELEVO LINEAL"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5881"
+  },
+  "FAILURECODE": "FA-0225 REMPLAZO DE ADHESIVO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5882"
+  },
+  "FAILURECODE": "FA-0226 RETRASO EN RUTA FEEDERS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5883"
+  },
+  "FAILURECODE": "FA-0227 RETRASO EN RUTA PASTA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5884"
+  },
+  "FAILURECODE": "FA-0228 RETRASO EN RUTA PILOTOS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5885"
+  },
+  "FAILURECODE": "FA-0229 RETRASO EN RUTA ROLLOS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5886"
+  },
+  "FAILURECODE": "FA-0230 RETRASO EN RUTA STENCILES"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5887"
+  },
+  "FAILURECODE": "FA-0231 RETRASO EN RUTA TABLILLA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5888"
+  },
+  "FAILURECODE": "FA-0232 REVISAR RATE"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5889"
+  },
+  "FAILURECODE": "FA-0233 SALPICADURA DE EPOXY EN UNDERFILL"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf588a"
+  },
+  "FAILURECODE": "FA-0234 SCANNER DAÑADO EN FVS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf588b"
+  },
+  "FAILURECODE": "FA-0235 SCRAP ELEVADO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf588c"
+  },
+  "FAILURECODE": "FA-0236 SEGMENTOS OMITIDOS EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf588d"
+  },
+  "FAILURECODE": "FA-0237 SERVIDOR CAIDO EN FIS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf588e"
+  },
+  "FAILURECODE": "FA-0238 SINGULADORA DEJA REBABA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf588f"
+  },
+  "FAILURECODE": "FA-0239 SINGULADORA NO CORTA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5890"
+  },
+  "FAILURECODE": "FA-0240 SINGULADORA NO DA BANDERA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5891"
+  },
+  "FAILURECODE": "FA-0241 SITUACION DE RIESGO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5892"
+  },
+  "FAILURECODE": "FA-0242 SOPORTE TECNICO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5893"
+  },
+  "FAILURECODE": "FA-0243 SPC EXPIRADO EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5894"
+  },
+  "FAILURECODE": "FA-0244 STENCIL AUSENTE EN DEK"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5895"
+  },
+  "FAILURECODE": "FA-0245 STENCIL DAÑADO EN DEK"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5896"
+  },
+  "FAILURECODE": "FA-0246 STENCIL EXPIRADO EN DEK"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5897"
+  },
+  "FAILURECODE": "FA-0247 STENCIL MAL IDENTIFICADO EN DEK"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5898"
+  },
+  "FAILURECODE": "FA-0248 STENCIL SUCIO EN DEK"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf5899"
+  },
+  "FAILURECODE": "FA-0249 TABLERO DAÑADO EN AOI"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf589a"
+  },
+  "FAILURECODE": "FA-0250 TABLERO DAÑADO EN CARGADOR AUTOMATICO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf589b"
+  },
+  "FAILURECODE": "FA-0251 TABLERO DAÑADO EN DEK"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf589c"
+  },
+  "FAILURECODE": "FA-0252 TABLERO DAÑADO EN DESCARGADOR AUTOMATICO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf589d"
+  },
+  "FAILURECODE": "FA-0253 TABLERO DAÑADO EN HORNO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf589e"
+  },
+  "FAILURECODE": "FA-0254 TABLERO DAÑADO EN LASSER"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf589f"
+  },
+  "FAILURECODE": "FA-0255 TABLERO DAÑADO EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58a0"
+  },
+  "FAILURECODE": "FA-0256 TABLERO DAÑADO EN SPI"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58a1"
+  },
+  "FAILURECODE": "FA-0257 TABLERO DAÑADO EN UNDERFILL"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58a2"
+  },
+  "FAILURECODE": "FA-0258 TABLERO FUERA DE RUTA EN AOI"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58a3"
+  },
+  "FAILURECODE": "FA-0259 TABLERO FUERA DE RUTA EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58a4"
+  },
+  "FAILURECODE": "FA-0260 TABLERO FUERA DE RUTA EN SPI"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58a5"
+  },
+  "FAILURECODE": "FA-0261 TABLILLA CON REBABA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58a6"
+  },
+  "FAILURECODE": "FA-0262 TIRANDO COMPONENTES EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58a7"
+  },
+  "FAILURECODE": "FA-0263 TPFS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58a8"
+  },
+  "FAILURECODE": "FA-0264 VENTOSA DAÑADA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58a9"
+  },
+  "FAILURECODE": "FA-0265 VOLTAJE"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58aa"
+  },
+  "FAILURECODE": "FA-0266 WI LIBERADA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58ab"
+  },
+  "FAILURECODE": "PD-0001 AUDITORIA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58ac"
+  },
+  "FAILURECODE": "PD-0002 CAMBIO DE ROLLO SUPERVISADO EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58ad"
+  },
+  "FAILURECODE": "PD-0003 CELEBRACION NAVIDEÑA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58ae"
+  },
+  "FAILURECODE": "PD-0004 CORRIDA ESPECIAL CONTROLADA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58af"
+  },
+  "FAILURECODE": "PD-0005 CORRIDA ESPECIAL DE SERVICIOS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58b0"
+  },
+  "FAILURECODE": "PD-0006 CORRIDA ESPECIAL PILOTO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58b1"
+  },
+  "FAILURECODE": "PD-0007 DESAYUNO - COMIDA - CENA - CAFE"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58b2"
+  },
+  "FAILURECODE": "PD-0008 DESCANSO PROGRAMADO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58b3"
+  },
+  "FAILURECODE": "PD-0009 DIA FESTIVO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58b4"
+  },
+  "FAILURECODE": "PD-0010 ESTUDIO DE STRESS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58b5"
+  },
+  "FAILURECODE": "PD-0011 ESTUDIOS DE CAPABILIDAD"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58b6"
+  },
+  "FAILURECODE": "PD-0012 EVENTO ESPECIAL"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58b7"
+  },
+  "FAILURECODE": "PD-0013 JUNTA DE COMUNICACION"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58b8"
+  },
+  "FAILURECODE": "PD-0014 JUNTA DE FONDO UNIDO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58b9"
+  },
+  "FAILURECODE": "PD-0015 JUNTA OPEX"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58ba"
+  },
+  "FAILURECODE": "PD-0016 JUNTA SINDICAL"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58bb"
+  },
+  "FAILURECODE": "PD-0017 LIMPIEZA GENERAL DEL AREA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58bc"
+  },
+  "FAILURECODE": "PD-0018 MANTENIMIENTO AUTONOMO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58bd"
+  },
+  "FAILURECODE": "PD-0019 MANTENIMIENTO CORRECTIVO PLANEADO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58be"
+  },
+  "FAILURECODE": "PD-0020 MANTENIMIENTO DE PLANTA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58bf"
+  },
+  "FAILURECODE": "PD-0021 MANTENIMIENTO PREVENTIVO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58c0"
+  },
+  "FAILURECODE": "PD-0022 MAQUINA NO PROGRAMADA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58c1"
+  },
+  "FAILURECODE": "PD-0023 MEJORA DE INGENIERIA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58c2"
+  },
+  "FAILURECODE": "PD-0024 MODELO URGENTE"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58c3"
+  },
+  "FAILURECODE": "PD-0025 MOVIMIENTO ESTRUCTURAL"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58c4"
+  },
+  "FAILURECODE": "PD-0026 OPERADOR EN ENTRENAMIENTO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58c5"
+  },
+  "FAILURECODE": "PD-0027 OPEX"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58c6"
+  },
+  "FAILURECODE": "PD-0028 PREPARACION PARA VISITA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58c7"
+  },
+  "FAILURECODE": "PD-0029 PRUEBA ELECTRICA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58c8"
+  },
+  "FAILURECODE": "PD-0030 READINESS"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58c9"
+  },
+  "FAILURECODE": "PD-0031 RELEVANDO EN OTRA LINEA POR PRIORIDAD"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58ca"
+  },
+  "FAILURECODE": "PD-0032 SECUENCIA PC&L"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58cb"
+  },
+  "FAILURECODE": "PD-0033 SERVICIO PLANEADO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58cc"
+  },
+  "FAILURECODE": "PD-0034 SIMULACRO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58cd"
+  },
+  "FAILURECODE": "PD-0035 SITUACION AMBIENTAL"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58ce"
+  },
+  "FAILURECODE": "PD-0036 SOPORTE DE INGENIERIA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58cf"
+  },
+  "FAILURECODE": "PD-0037 SOPORTE DE PROVEEDOR"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58d0"
+  },
+  "FAILURECODE": "PD-0038 TLO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58d1"
+  },
+  "FAILURECODE": "PD-0039 VALIDACION DE EQUIPO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58d2"
+  },
+  "FAILURECODE": "PD-0040 VALIDACION DE INGENIERIA"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58d3"
+  },
+  "FAILURECODE": "PD-0041 VALIDACION DE NUEVO MODELO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58d4"
+  },
+  "FAILURECODE": "PD-0042 VALIDACION DE ROLLO"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58d5"
+  },
+  "FAILURECODE": "PD-0043 VALIDACION DE SOFTWARE"
+},
+{
+  "_id": {
+    "$oid": "6a8c29593b7aabd8b3bf58d6"
+  },
+  "FAILURECODE": "PD-0044 VALIDACION DE STENCIL"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6bdc"
+  },
+  "FAILURECODE": "FA-0267 FALTA DE TABLILLA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6bdd"
+  },
+  "FAILURECODE": "FA-0268 FALTA DE HOUSING"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6bde"
+  },
+  "FAILURECODE": "FA-0269 FALTA DE ANTENA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6bdf"
+  },
+  "FAILURECODE": "FA-0270 FALTA DE PSA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6be0"
+  },
+  "FAILURECODE": "FA-0271 FALTA DE TORNILLOS"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6be1"
+  },
+  "FAILURECODE": "FA-0272 FALTA DE PALLETS"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6be2"
+  },
+  "FAILURECODE": "FA-0273 FALTA DE PALLETS VACIOS"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6be3"
+  },
+  "FAILURECODE": "FA-0274 PALLETS LLENOS"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6be4"
+  },
+  "FAILURECODE": "FA-0275 FALTA DE CARROS"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6be5"
+  },
+  "FAILURECODE": "FA-0276 FALTA DE CANASTILLAS"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6be6"
+  },
+  "FAILURECODE": "FA-0277 FALTA DE MATERIAL DESDE EDGEBOND"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6be7"
+  },
+  "FAILURECODE": "FA-0278 FALTA DE MATERIAL DESDE ROUTERMILLING"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6be8"
+  },
+  "FAILURECODE": "FA-0279 FALTA DE MATERIAL DESDE MOL"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6be9"
+  },
+  "FAILURECODE": "FA-0280 FALTA DE MATERIAL DESDE PROGRAMMING"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6bea"
+  },
+  "FAILURECODE": "FA-0281 FALTA DE MATERIAL DESDE CONFORMAL"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6beb"
+  },
+  "FAILURECODE": "FA-0282 FALTA DE MATERIAL DESDE ICT"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6bec"
+  },
+  "FAILURECODE": "FA-0283 FALTA DE MATERIAL DESDE SINGULATION"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6bed"
+  },
+  "FAILURECODE": "FA-0284 FALTA DE MATERIAL DESDE PTH"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6bee"
+  },
+  "FAILURECODE": "FA-0285 FALTA DE MATERIAL DESDE XRAY"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6bef"
+  },
+  "FAILURECODE": "FA-0286 FALTA DE MATERIAL DESDE UNDERFILL"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6bf0"
+  },
+  "FAILURECODE": "FA-0287 FALTA DE CAJAS"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6bf1"
+  },
+  "FAILURECODE": "FA-0288 FALTA DE ETIQUETAS"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6bf2"
+  },
+  "FAILURECODE": "FA-0289 FALTA DE PERSONAL"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6bf3"
+  },
+  "FAILURECODE": "FA-0290 OPERACION LINEAL"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6bf4"
+  },
+  "FAILURECODE": "FA-0291 PERSONAL NO TITULAR"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6bf5"
+  },
+  "FAILURECODE": "FA-0292 FALLA DE ATORNILLADO"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6bf6"
+  },
+  "FAILURECODE": "FA-0293 FALLA DE TORQUE"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6bf7"
+  },
+  "FAILURECODE": "FA-0294 TORNILLO BARRIDO"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6bf8"
+  },
+  "FAILURECODE": "FA-0295 PUNTA DE ATORNILLADOR DESGASTADA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6bf9"
+  },
+  "FAILURECODE": "FA-0296 FALLA DE DISPENSADO"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6bfa"
+  },
+  "FAILURECODE": "FA-0297 CAMBIO DE CUBETA DE CONFORMAL"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6bfb"
+  },
+  "FAILURECODE": "FA-0298 FALLA DE FLOW MONITOR"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6bfc"
+  },
+  "FAILURECODE": "FA-0299 FALLA DE INVERSOR"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6bfd"
+  },
+  "FAILURECODE": "FA-0300 BOQUILLA TAPADA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6bfe"
+  },
+  "FAILURECODE": "FA-0301 LIMPIEZA DE DISPENSADORA DE CONFORMAL"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6bff"
+  },
+  "FAILURECODE": "FA-0302 SALPICADURA DE CONFORMAL"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c00"
+  },
+  "FAILURECODE": "FA-0303 LIMPIEZA DE CARTUCHOS"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c01"
+  },
+  "FAILURECODE": "FA-0304 CADENA ATORADA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c02"
+  },
+  "FAILURECODE": "FA-0305 SPROCKET DAÑADO"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c03"
+  },
+  "FAILURECODE": "FA-0306 LLENADO DE HORNO"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c04"
+  },
+  "FAILURECODE": "FA-0307 LIMPIEZA DE PINES"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c05"
+  },
+  "FAILURECODE": "FA-0308 FALLA DE PRENSA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c06"
+  },
+  "FAILURECODE": "FA-0309 NO AGARRA PSA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c07"
+  },
+  "FAILURECODE": "FA-0310 CAMBIO DE ROLLO DE PSA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c08"
+  },
+  "FAILURECODE": "FA-0311 FALLA DE SENSOR DE BROCA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c09"
+  },
+  "FAILURECODE": "FA-0312 FALLA DE HUSILLO"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c0a"
+  },
+  "FAILURECODE": "FA-0313 FALLA DE INTERLOCK"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c0b"
+  },
+  "FAILURECODE": "FA-0314 TABLILLA ATORADA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c0c"
+  },
+  "FAILURECODE": "FA-0315 FALLA DE BANDA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c0d"
+  },
+  "FAILURECODE": "FA-0316 CANISTER MAL ACOMODADO"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c0e"
+  },
+  "FAILURECODE": "FA-0317 PERDIDA DE SECUENCIA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c0f"
+  },
+  "FAILURECODE": "FA-0318 FALLA DE LEAK TEST"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c10"
+  },
+  "FAILURECODE": "FA-0319 RECHAZO POR FUGA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c11"
+  },
+  "FAILURECODE": "FA-0320 FALLA DE CAMARA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c12"
+  },
+  "FAILURECODE": "FA-0321 FALLA DE SENSOR"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c13"
+  },
+  "FAILURECODE": "FA-0322 BLOQUEO DE CONTRASEÑA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c14"
+  },
+  "FAILURECODE": "FA-0323 TIEMPO DE CICLO ALTO"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c15"
+  },
+  "FAILURECODE": "FA-0324 PROCESO LENTO"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c16"
+  },
+  "FAILURECODE": "FA-0325 VACIADO DE LINEA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c17"
+  },
+  "FAILURECODE": "FA-0326 CORRIENDO PALLET POR PALLET"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c18"
+  },
+  "FAILURECODE": "FA-0327 RETRABAJO EN LINEA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c19"
+  },
+  "FAILURECODE": "FA-0328 FALLA DE AOI"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c1a"
+  },
+  "FAILURECODE": "FA-0329 FVS NO ACTUALIZADO"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c1b"
+  },
+  "FAILURECODE": "FA-0330 MAQUINA INHIBIDA EN SPI"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c1c"
+  },
+  "FAILURECODE": "FA-0331 MAQUINA INHIBIDA EN DEK"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c1d"
+  },
+  "FAILURECODE": "FA-0332 MAQUINA INHIBIDA EN SIEMENS"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c1e"
+  },
+  "FAILURECODE": "FA-0333 MAQUINA INHIBIDA EN AOI"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c1f"
+  },
+  "FAILURECODE": "FA-0334 PINES DOBLADOS"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c20"
+  },
+  "FAILURECODE": "FA-0335 FALLA DE SECADO EN LEAKTEST"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c21"
+  },
+  "FAILURECODE": "FA-0336 FALLA DE CAMA DE CLAVOS"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c22"
+  },
+  "FAILURECODE": "FA-0337 AGUJA DE ICT DOBLADA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c23"
+  },
+  "FAILURECODE": "FA-0338 FALSOS RECHAZOS EN ICT"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c24"
+  },
+  "FAILURECODE": "FA-0339 FALLA DE OLA DE SOLDADURA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c25"
+  },
+  "FAILURECODE": "FA-0340 FALLA DE FLUXER"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c26"
+  },
+  "FAILURECODE": "FA-0341 PUENTE DE SOLDADURA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c27"
+  },
+  "FAILURECODE": "FA-0342 FALLA DE TUBO DE RAYOS X"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c28"
+  },
+  "FAILURECODE": "FA-0343 FALLA DE IMAGEN EN RAYOS X"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c29"
+  },
+  "FAILURECODE": "FA-0344 FALLA DE MOLDE"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c2a"
+  },
+  "FAILURECODE": "FA-0345 MATERIAL ATORADO EN MOLDE"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c2b"
+  },
+  "FAILURECODE": "FA-0346 FALLA DE PRENSA DE MOLDEO"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c2c"
+  },
+  "FAILURECODE": "FA-0347 FALLA DE MARCADO LASER"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c2d"
+  },
+  "FAILURECODE": "FA-0348 LENTE DE LASER SUCIA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c2e"
+  },
+  "FAILURECODE": "FA-0349 AGUJA TAPADA EN UNDERFILL"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c2f"
+  },
+  "FAILURECODE": "FA-0350 FALLA DE CONTENCION LGA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c30"
+  },
+  "FAILURECODE": "FA-0351 FALLA DE CAMALOT"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c31"
+  },
+  "FAILURECODE": "FA-0352 CURADO INCOMPLETO"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c32"
+  },
+  "FAILURECODE": "FA-0353 MATERIAL ATORADO EN SINGULADORA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c33"
+  },
+  "FAILURECODE": "FA-0354 DESVIO DE CORTE"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c34"
+  },
+  "FAILURECODE": "FA-0355 FALLA DE ALINEACION ACTIVA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c35"
+  },
+  "FAILURECODE": "FA-0356 FALLA DE CAMARA EN ACTIVE ALIGN"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c36"
+  },
+  "FAILURECODE": "FA-0357 PERFIL DE HORNO FUERA DE RANGO"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c37"
+  },
+  "FAILURECODE": "FA-0358 FALLA DE CALIBRACION INTRINSECA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c38"
+  },
+  "FAILURECODE": "FA-0359 FALLA DE PRUEBA EOL"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c39"
+  },
+  "FAILURECODE": "FA-0360 FALSOS RECHAZOS EN EOL"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c3a"
+  },
+  "FAILURECODE": "FA-0361 FALLA DE INSPECCION CMI"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c3b"
+  },
+  "FAILURECODE": "FA-0362 EMPACADORA ATORADA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c3c"
+  },
+  "FAILURECODE": "FA-0363 FALLA DE IMPRESORA DE ETIQUETAS"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c3d"
+  },
+  "FAILURECODE": "FA-0364 FALLA DE GOLDEN SAMPLE"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c3e"
+  },
+  "FAILURECODE": "PD-0045 CALENTAMIENTO DE HORNO"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c3f"
+  },
+  "FAILURECODE": "PD-0046 CALENTAMIENTO DE EQUIPO"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c40"
+  },
+  "FAILURECODE": "PD-0047 CAMBIO DE HERRAMENTAL"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c41"
+  },
+  "FAILURECODE": "PD-0048 LIMPIEZA PROGRAMADA DE EQUIPO"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c42"
+  },
+  "FAILURECODE": "PD-0049 CALIBRACION PROGRAMADA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c43"
+  },
+  "FAILURECODE": "PD-0050 CONTEO DE INVENTARIO"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c44"
+  },
+  "FAILURECODE": "PD-0051 VERIFICACION DE PRIMER ARTICULO"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c45"
+  },
+  "FAILURECODE": "PD-0052 PRUEBA DE GOLDEN SAMPLE"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c46"
+  },
+  "FAILURECODE": "PD-0053 PURGA PROGRAMADA DE LINEA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c47"
+  },
+  "FAILURECODE": "PD-0054 REEMPLAZO PROGRAMADO DE BROCA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c48"
+  },
+  "FAILURECODE": "PD-0055 CAMBIO DE FILTRO"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c49"
+  },
+  "FAILURECODE": "PD-0056 LUBRICACION PROGRAMADA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c4a"
+  },
+  "FAILURECODE": "PD-0057 CAPACITACION PROGRAMADA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c4b"
+  },
+  "FAILURECODE": "PD-0058 CAMBIO DE RECETA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c4c"
+  },
+  "FAILURECODE": "PD-0059 MANTENIMIENTO DE HORNO"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c4d"
+  },
+  "FAILURECODE": "PD-0060 REEMPLAZO PROGRAMADO DE PUNTA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c4e"
+  },
+  "FAILURECODE": "PD-0061 LIMPIEZA PROGRAMADA DE STENCIL"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c4f"
+  },
+  "FAILURECODE": "PD-0062 CAMBIO DE CUBETA PROGRAMADO"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c50"
+  },
+  "FAILURECODE": "PD-0063 SIN DEMANDA"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c51"
+  },
+  "FAILURECODE": "PD-0064 REUNION DE CALIDAD"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c52"
+  },
+  "FAILURECODE": "PD-0065 VALIDACION DE EOL"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c53"
+  },
+  "FAILURECODE": "PD-0066 CAMBIO DE NIDO"
+},
+{
+  "_id": {
+    "$oid": "6aea8ebb7961b503cb7c6c54"
+  },
+  "FAILURECODE": "PD-0067 CAMBIO DE FIXTURA PROGRAMADO"
+}]
