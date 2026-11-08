@@ -1,0 +1,1 @@
+function e(e,t,n){let r=[];if(n)for(let[e,t]of Object.entries(n)){if(t==null||t===``)continue;let n=String(t);r.push(/[\s|=]/.test(n)?`${e}="${n.replace(/"/g,``)}"`:`${e}=${n}`)}return`[${e}] ${t}${r.length?` | ${r.join(` `)}`:``}`}export{e as t};
